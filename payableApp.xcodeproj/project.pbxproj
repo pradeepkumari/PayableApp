@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18AB49111D8A795B00B273C9 /* StripeSigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AB49101D8A795B00B273C9 /* StripeSigninViewController.swift */; };
+		18AB49131D8A8D0D00B273C9 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AB49121D8A8D0D00B273C9 /* AppConstant.swift */; };
+		18AB49151D8ABEC100B273C9 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AB49141D8ABEC100B273C9 /* AccountInfoViewController.swift */; };
+		18C536151D8960A700116795 /* PayableHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C536141D8960A700116795 /* PayableHomePageViewController.swift */; };
+		18C536241D89662100116795 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C536181D89662100116795 /* DBHelper.swift */; };
+		18C536251D89662100116795 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5361A1D89662100116795 /* FMDatabase.m */; };
+		18C536261D89662100116795 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5361C1D89662100116795 /* FMDatabaseAdditions.m */; };
+		18C536271D89662100116795 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5361E1D89662100116795 /* FMDatabasePool.m */; };
+		18C536281D89662100116795 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C536201D89662100116795 /* FMDatabaseQueue.m */; };
+		18C536291D89662100116795 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C536231D89662100116795 /* FMResultSet.m */; };
+		18C536361D8966E200116795 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C536321D8966E200116795 /* EventManager.swift */; };
+		18C536371D8966E200116795 /* JsonSerializerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C536331D8966E200116795 /* JsonSerializerSwift.swift */; };
+		18C536381D8966E200116795 /* Signupviewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C536341D8966E200116795 /* Signupviewmodel.swift */; };
+		18C536391D8966E200116795 /* SwiftyJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C536351D8966E200116795 /* SwiftyJson.swift */; };
+		18C536431D89674400116795 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C536421D89674400116795 /* Alert.swift */; };
+		18C536451D89699B00116795 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C536441D89699B00116795 /* libsqlite3.0.tbd */; };
 		18C669431D87F296000F8BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C669421D87F296000F8BBA /* AppDelegate.swift */; };
 		18C669451D87F296000F8BBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C669441D87F296000F8BBA /* ViewController.swift */; };
 		18C669481D87F296000F8BBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C669461D87F296000F8BBA /* Main.storyboard */; };
@@ -14,6 +30,19 @@
 		18C6694D1D87F296000F8BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C6694B1D87F296000F8BBA /* LaunchScreen.storyboard */; };
 		18C669581D87F296000F8BBA /* payableAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C669571D87F296000F8BBA /* payableAppTests.swift */; };
 		18C669631D87F296000F8BBA /* payableAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C669621D87F296000F8BBA /* payableAppUITests.swift */; };
+		18C669711D87F2CA000F8BBA /* LoginandSignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C669701D87F2CA000F8BBA /* LoginandSignUpPageViewController.swift */; };
+		18C669731D87F412000F8BBA /* Screen Shot 2016-09-13 at 2.14.25 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C669721D87F412000F8BBA /* Screen Shot 2016-09-13 at 2.14.25 PM.png */; };
+		18C669751D88014C000F8BBA /* icon_password.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C669741D88014C000F8BBA /* icon_password.png */; };
+		18C669771D880155000F8BBA /* icon_username.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C669761D880155000F8BBA /* icon_username.png */; };
+		18C669791D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C669781D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png */; };
+		18C6697B1D8853B7000F8BBA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6697A1D8853B7000F8BBA /* SignUpViewController.swift */; };
+		18E8BA721D8C47E100B5F56A /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA6C1D8C47E100B5F56A /* account.png */; };
+		18E8BA731D8C47E100B5F56A /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA6D1D8C47E100B5F56A /* history.png */; };
+		18E8BA741D8C47E100B5F56A /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA6E1D8C47E100B5F56A /* logout.png */; };
+		18E8BA751D8C47E100B5F56A /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA6F1D8C47E100B5F56A /* settings.png */; };
+		18E8BA761D8C47E100B5F56A /* stripe.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA701D8C47E100B5F56A /* stripe.png */; };
+		18E8BA771D8C47E100B5F56A /* usedimages.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA711D8C47E100B5F56A /* usedimages.png */; };
+		18E8BA791D8C4F0100B5F56A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E8BA781D8C4F0100B5F56A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +63,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18AB49101D8A795B00B273C9 /* StripeSigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeSigninViewController.swift; sourceTree = "<group>"; };
+		18AB49121D8A8D0D00B273C9 /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		18AB49141D8ABEC100B273C9 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
+		18C536141D8960A700116795 /* PayableHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayableHomePageViewController.swift; sourceTree = "<group>"; };
+		18C536171D89662000116795 /* payableApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "payableApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		18C536181D89662100116795 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBHelper.swift; path = ../WalletPayable/DBHelper.swift; sourceTree = "<group>"; };
+		18C536191D89662100116795 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = ../WalletPayable/FMDatabase.h; sourceTree = "<group>"; };
+		18C5361A1D89662100116795 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = ../WalletPayable/FMDatabase.m; sourceTree = "<group>"; };
+		18C5361B1D89662100116795 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = ../WalletPayable/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		18C5361C1D89662100116795 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = ../WalletPayable/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		18C5361D1D89662100116795 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = ../WalletPayable/FMDatabasePool.h; sourceTree = "<group>"; };
+		18C5361E1D89662100116795 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = ../WalletPayable/FMDatabasePool.m; sourceTree = "<group>"; };
+		18C5361F1D89662100116795 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = ../WalletPayable/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		18C536201D89662100116795 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = ../WalletPayable/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		18C536211D89662100116795 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = ../WalletPayable/FMDB.h; sourceTree = "<group>"; };
+		18C536221D89662100116795 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = ../WalletPayable/FMResultSet.h; sourceTree = "<group>"; };
+		18C536231D89662100116795 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = ../WalletPayable/FMResultSet.m; sourceTree = "<group>"; };
+		18C536321D8966E200116795 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		18C536331D8966E200116795 /* JsonSerializerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonSerializerSwift.swift; sourceTree = "<group>"; };
+		18C536341D8966E200116795 /* Signupviewmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signupviewmodel.swift; sourceTree = "<group>"; };
+		18C536351D8966E200116795 /* SwiftyJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJson.swift; sourceTree = "<group>"; };
+		18C536421D89674400116795 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		18C536441D89699B00116795 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		18C6693F1D87F296000F8BBA /* payableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = payableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C669421D87F296000F8BBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18C669441D87F296000F8BBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +99,19 @@
 		18C6695E1D87F296000F8BBA /* payableAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = payableAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C669621D87F296000F8BBA /* payableAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = payableAppUITests.swift; sourceTree = "<group>"; };
 		18C669641D87F296000F8BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C669701D87F2CA000F8BBA /* LoginandSignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginandSignUpPageViewController.swift; path = ../LoginandSignUpPageViewController.swift; sourceTree = "<group>"; };
+		18C669721D87F412000F8BBA /* Screen Shot 2016-09-13 at 2.14.25 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2016-09-13 at 2.14.25 PM.png"; path = "../../Screen Shot 2016-09-13 at 2.14.25 PM.png"; sourceTree = "<group>"; };
+		18C669741D88014C000F8BBA /* icon_password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_password.png; path = ../../../Downloads/icon_password.png; sourceTree = "<group>"; };
+		18C669761D880155000F8BBA /* icon_username.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_username.png; path = ../../../Downloads/icon_username.png; sourceTree = "<group>"; };
+		18C669781D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2016-09-12 at 6.44.23 PM.png"; path = "../../Screen Shot 2016-09-12 at 6.44.23 PM.png"; sourceTree = "<group>"; };
+		18C6697A1D8853B7000F8BBA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		18E8BA6C1D8C47E100B5F56A /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = account.png; path = ../../../Downloads/Attachments_2016916/account.png; sourceTree = "<group>"; };
+		18E8BA6D1D8C47E100B5F56A /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history.png; path = ../../../Downloads/Attachments_2016916/history.png; sourceTree = "<group>"; };
+		18E8BA6E1D8C47E100B5F56A /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logout.png; path = ../../../Downloads/Attachments_2016916/logout.png; sourceTree = "<group>"; };
+		18E8BA6F1D8C47E100B5F56A /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = ../../../Downloads/Attachments_2016916/settings.png; sourceTree = "<group>"; };
+		18E8BA701D8C47E100B5F56A /* stripe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stripe.png; path = ../../../Downloads/Attachments_2016916/stripe.png; sourceTree = "<group>"; };
+		18E8BA711D8C47E100B5F56A /* usedimages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usedimages.png; path = ../../../Downloads/Attachments_2016916/usedimages.png; sourceTree = "<group>"; };
+		18E8BA781D8C4F0100B5F56A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C536451D89699B00116795 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +140,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18C536161D8965FB00116795 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				18C536181D89662100116795 /* DBHelper.swift */,
+				18C536191D89662100116795 /* FMDatabase.h */,
+				18C5361A1D89662100116795 /* FMDatabase.m */,
+				18C5361B1D89662100116795 /* FMDatabaseAdditions.h */,
+				18C5361C1D89662100116795 /* FMDatabaseAdditions.m */,
+				18C5361D1D89662100116795 /* FMDatabasePool.h */,
+				18C5361E1D89662100116795 /* FMDatabasePool.m */,
+				18C5361F1D89662100116795 /* FMDatabaseQueue.h */,
+				18C536201D89662100116795 /* FMDatabaseQueue.m */,
+				18C536211D89662100116795 /* FMDB.h */,
+				18C536221D89662100116795 /* FMResultSet.h */,
+				18C536231D89662100116795 /* FMResultSet.m */,
+				18C536171D89662000116795 /* payableApp-Bridging-Header.h */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		18C669361D87F296000F8BBA = {
 			isa = PBXGroup;
 			children = (
+				18C536441D89699B00116795 /* libsqlite3.0.tbd */,
+				18C536161D8965FB00116795 /* Helpers */,
 				18C669411D87F296000F8BBA /* payableApp */,
 				18C669561D87F296000F8BBA /* payableAppTests */,
 				18C669611D87F296000F8BBA /* payableAppUITests */,
@@ -97,12 +185,34 @@
 		18C669411D87F296000F8BBA /* payableApp */ = {
 			isa = PBXGroup;
 			children = (
+				18C536421D89674400116795 /* Alert.swift */,
+				18C536321D8966E200116795 /* EventManager.swift */,
+				18C536331D8966E200116795 /* JsonSerializerSwift.swift */,
+				18C536341D8966E200116795 /* Signupviewmodel.swift */,
+				18C536351D8966E200116795 /* SwiftyJson.swift */,
 				18C669421D87F296000F8BBA /* AppDelegate.swift */,
 				18C669441D87F296000F8BBA /* ViewController.swift */,
+				18C669701D87F2CA000F8BBA /* LoginandSignUpPageViewController.swift */,
+				18C6697A1D8853B7000F8BBA /* SignUpViewController.swift */,
+				18C536141D8960A700116795 /* PayableHomePageViewController.swift */,
+				18C669781D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png */,
+				18C669721D87F412000F8BBA /* Screen Shot 2016-09-13 at 2.14.25 PM.png */,
+				18C669761D880155000F8BBA /* icon_username.png */,
+				18C669741D88014C000F8BBA /* icon_password.png */,
+				18E8BA6C1D8C47E100B5F56A /* account.png */,
+				18E8BA6D1D8C47E100B5F56A /* history.png */,
+				18E8BA6E1D8C47E100B5F56A /* logout.png */,
+				18E8BA6F1D8C47E100B5F56A /* settings.png */,
+				18E8BA701D8C47E100B5F56A /* stripe.png */,
+				18E8BA711D8C47E100B5F56A /* usedimages.png */,
 				18C669461D87F296000F8BBA /* Main.storyboard */,
 				18C669491D87F296000F8BBA /* Assets.xcassets */,
 				18C6694B1D87F296000F8BBA /* LaunchScreen.storyboard */,
 				18C6694E1D87F296000F8BBA /* Info.plist */,
+				18AB49101D8A795B00B273C9 /* StripeSigninViewController.swift */,
+				18AB49121D8A8D0D00B273C9 /* AppConstant.swift */,
+				18AB49141D8ABEC100B273C9 /* AccountInfoViewController.swift */,
+				18E8BA781D8C4F0100B5F56A /* SettingsViewController.swift */,
 			);
 			path = payableApp;
 			sourceTree = "<group>";
@@ -193,6 +303,7 @@
 				TargetAttributes = {
 					18C6693E1D87F296000F8BBA = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9QKMVMFY5S;
 					};
 					18C669521D87F296000F8BBA = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -229,7 +340,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E8BA731D8C47E100B5F56A /* history.png in Resources */,
+				18C669791D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png in Resources */,
+				18C669771D880155000F8BBA /* icon_username.png in Resources */,
+				18E8BA751D8C47E100B5F56A /* settings.png in Resources */,
+				18E8BA761D8C47E100B5F56A /* stripe.png in Resources */,
 				18C6694D1D87F296000F8BBA /* LaunchScreen.storyboard in Resources */,
+				18E8BA721D8C47E100B5F56A /* account.png in Resources */,
+				18C669751D88014C000F8BBA /* icon_password.png in Resources */,
+				18E8BA771D8C47E100B5F56A /* usedimages.png in Resources */,
+				18C669731D87F412000F8BBA /* Screen Shot 2016-09-13 at 2.14.25 PM.png in Resources */,
+				18E8BA741D8C47E100B5F56A /* logout.png in Resources */,
 				18C6694A1D87F296000F8BBA /* Assets.xcassets in Resources */,
 				18C669481D87F296000F8BBA /* Main.storyboard in Resources */,
 			);
@@ -257,7 +378,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C669451D87F296000F8BBA /* ViewController.swift in Sources */,
+				18C536241D89662100116795 /* DBHelper.swift in Sources */,
+				18C536381D8966E200116795 /* Signupviewmodel.swift in Sources */,
+				18E8BA791D8C4F0100B5F56A /* SettingsViewController.swift in Sources */,
 				18C669431D87F296000F8BBA /* AppDelegate.swift in Sources */,
+				18C536251D89662100116795 /* FMDatabase.m in Sources */,
+				18C536271D89662100116795 /* FMDatabasePool.m in Sources */,
+				18AB49111D8A795B00B273C9 /* StripeSigninViewController.swift in Sources */,
+				18C536281D89662100116795 /* FMDatabaseQueue.m in Sources */,
+				18C536361D8966E200116795 /* EventManager.swift in Sources */,
+				18C536151D8960A700116795 /* PayableHomePageViewController.swift in Sources */,
+				18C6697B1D8853B7000F8BBA /* SignUpViewController.swift in Sources */,
+				18C536371D8966E200116795 /* JsonSerializerSwift.swift in Sources */,
+				18AB49131D8A8D0D00B273C9 /* AppConstant.swift in Sources */,
+				18C536291D89662100116795 /* FMResultSet.m in Sources */,
+				18C669711D87F2CA000F8BBA /* LoginandSignUpPageViewController.swift in Sources */,
+				18C536261D89662100116795 /* FMDatabaseAdditions.m in Sources */,
+				18AB49151D8ABEC100B273C9 /* AccountInfoViewController.swift in Sources */,
+				18C536431D89674400116795 /* Alert.swift in Sources */,
+				18C536391D8966E200116795 /* SwiftyJson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,10 +538,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = payableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.payableApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "payableApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -410,10 +555,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = payableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.payableApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "payableApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -484,6 +634,7 @@
 				18C669691D87F296000F8BBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18C6696A1D87F296000F8BBA /* Build configuration list for PBXNativeTarget "payableAppTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +643,7 @@
 				18C6696C1D87F296000F8BBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18C6696D1D87F296000F8BBA /* Build configuration list for PBXNativeTarget "payableAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +652,7 @@
 				18C6696F1D87F296000F8BBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
