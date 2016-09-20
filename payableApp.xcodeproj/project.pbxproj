@@ -36,6 +36,7 @@
 		18C669771D880155000F8BBA /* icon_username.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C669761D880155000F8BBA /* icon_username.png */; };
 		18C669791D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C669781D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png */; };
 		18C6697B1D8853B7000F8BBA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6697A1D8853B7000F8BBA /* SignUpViewController.swift */; };
+		18D6F1F31D910E5C00B9D985 /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6F1F21D910E5C00B9D985 /* PopOverViewController.swift */; };
 		18E8BA721D8C47E100B5F56A /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA6C1D8C47E100B5F56A /* account.png */; };
 		18E8BA731D8C47E100B5F56A /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA6D1D8C47E100B5F56A /* history.png */; };
 		18E8BA741D8C47E100B5F56A /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA6E1D8C47E100B5F56A /* logout.png */; };
@@ -43,6 +44,8 @@
 		18E8BA761D8C47E100B5F56A /* stripe.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA701D8C47E100B5F56A /* stripe.png */; };
 		18E8BA771D8C47E100B5F56A /* usedimages.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA711D8C47E100B5F56A /* usedimages.png */; };
 		18E8BA791D8C4F0100B5F56A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E8BA781D8C4F0100B5F56A /* SettingsViewController.swift */; };
+		18F690D31D8FB09B00DF1AE9 /* StripeDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F690D21D8FB09B00DF1AE9 /* StripeDashboardViewController.swift */; };
+		18F690D51D901AC800DF1AE9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F690D41D901AC800DF1AE9 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,7 @@
 		18C669761D880155000F8BBA /* icon_username.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_username.png; path = ../../../Downloads/icon_username.png; sourceTree = "<group>"; };
 		18C669781D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2016-09-12 at 6.44.23 PM.png"; path = "../../Screen Shot 2016-09-12 at 6.44.23 PM.png"; sourceTree = "<group>"; };
 		18C6697A1D8853B7000F8BBA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		18D6F1F21D910E5C00B9D985 /* PopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		18E8BA6C1D8C47E100B5F56A /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = account.png; path = ../../../Downloads/Attachments_2016916/account.png; sourceTree = "<group>"; };
 		18E8BA6D1D8C47E100B5F56A /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history.png; path = ../../../Downloads/Attachments_2016916/history.png; sourceTree = "<group>"; };
 		18E8BA6E1D8C47E100B5F56A /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logout.png; path = ../../../Downloads/Attachments_2016916/logout.png; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		18E8BA701D8C47E100B5F56A /* stripe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stripe.png; path = ../../../Downloads/Attachments_2016916/stripe.png; sourceTree = "<group>"; };
 		18E8BA711D8C47E100B5F56A /* usedimages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usedimages.png; path = ../../../Downloads/Attachments_2016916/usedimages.png; sourceTree = "<group>"; };
 		18E8BA781D8C4F0100B5F56A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		18F690D21D8FB09B00DF1AE9 /* StripeDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeDashboardViewController.swift; sourceTree = "<group>"; };
+		18F690D41D901AC800DF1AE9 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +219,9 @@
 				18AB49121D8A8D0D00B273C9 /* AppConstant.swift */,
 				18AB49141D8ABEC100B273C9 /* AccountInfoViewController.swift */,
 				18E8BA781D8C4F0100B5F56A /* SettingsViewController.swift */,
+				18F690D21D8FB09B00DF1AE9 /* StripeDashboardViewController.swift */,
+				18F690D41D901AC800DF1AE9 /* HistoryViewController.swift */,
+				18D6F1F21D910E5C00B9D985 /* PopOverViewController.swift */,
 			);
 			path = payableApp;
 			sourceTree = "<group>";
@@ -303,7 +312,6 @@
 				TargetAttributes = {
 					18C6693E1D87F296000F8BBA = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 9QKMVMFY5S;
 					};
 					18C669521D87F296000F8BBA = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -382,13 +390,16 @@
 				18C536381D8966E200116795 /* Signupviewmodel.swift in Sources */,
 				18E8BA791D8C4F0100B5F56A /* SettingsViewController.swift in Sources */,
 				18C669431D87F296000F8BBA /* AppDelegate.swift in Sources */,
+				18F690D51D901AC800DF1AE9 /* HistoryViewController.swift in Sources */,
 				18C536251D89662100116795 /* FMDatabase.m in Sources */,
 				18C536271D89662100116795 /* FMDatabasePool.m in Sources */,
+				18D6F1F31D910E5C00B9D985 /* PopOverViewController.swift in Sources */,
 				18AB49111D8A795B00B273C9 /* StripeSigninViewController.swift in Sources */,
 				18C536281D89662100116795 /* FMDatabaseQueue.m in Sources */,
 				18C536361D8966E200116795 /* EventManager.swift in Sources */,
 				18C536151D8960A700116795 /* PayableHomePageViewController.swift in Sources */,
 				18C6697B1D8853B7000F8BBA /* SignUpViewController.swift in Sources */,
+				18F690D31D8FB09B00DF1AE9 /* StripeDashboardViewController.swift in Sources */,
 				18C536371D8966E200116795 /* JsonSerializerSwift.swift in Sources */,
 				18AB49131D8A8D0D00B273C9 /* AppConstant.swift in Sources */,
 				18C536291D89662100116795 /* FMResultSet.m in Sources */,
@@ -542,6 +553,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = payableApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.payableApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,6 +571,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = payableApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.payableApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

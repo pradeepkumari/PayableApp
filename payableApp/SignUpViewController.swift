@@ -8,8 +8,9 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UIAlertViewDelegate{
+class SignUpViewController: UIViewController, UIAlertViewDelegate, UIPopoverPresentationControllerDelegate,UIPopoverControllerDelegate{
 
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var categoryNameTextField: UITextField!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var selectAccountTypeButton: UIButton!
@@ -25,6 +26,11 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(animated: Bool) {
         self.createBottomLineTextField(userNameTextField)
         self.createBottomLineTextField(emailTextField)
         self.createBottomLineTextField(passwordTextField)
@@ -36,8 +42,6 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate{
         categoryType = ["Individual","Employee","Company","Non-Profit Organisation","Non-Profit Organisation Employee"]
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-        
-        // Do any additional setup after loading the view.
     }
     @IBAction func selectAccountType(sender: AnyObject) {
         self.alertFunction(accountType)
@@ -89,46 +93,111 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate{
             sumUpCheck = true
         }
     }
-
+    
+    
+    
+    
+    func addCategory() {
+        
+        let popoverContent = (self.storyboard?.instantiateViewControllerWithIdentifier("popOver"))! as! PopOverViewController
+//        let nav = UINavigationController(rootViewController: popoverContent)
+        popoverContent.modalPresentationStyle = .Popover
+        let popover = popoverContent.popoverPresentationController
+        popoverContent.preferredContentSize = CGSizeMake(100,150)
+        popover!.delegate = self
+        popover!.sourceView = self.view
+        popover!.sourceRect = CGRectMake(100,100,0,0)
+        
+//        self.view.addSubview(popoverContent.view)
+//        popoverContent.didMoveToParentViewController(self)
+        self.presentViewController(popoverContent, animated: true, completion: nil)
+        
+      
+        
+        
+        
+    }
+    
     @IBAction func categoryTypeButtonAction(sender: AnyObject)
     {
-        let alertController = UIAlertController()
-        // Initialize Actions
-        let action = UIAlertAction(title: categoryType[0] as String, style: .Default) { (action) -> Void in
-            self.categoryNameTextField.hidden = true
-            self.categoryTypeBtn.setTitle("   Individual", forState: .Normal)
-            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
-            
-        }
+       
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("popOver") as! UIViewController
+        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
+        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
+//        popover.barButtonItem = sender as! UIBarButtonItem
+        presentViewController(vc, animated: true, completion:nil)
         
-        let action1 = UIAlertAction(title: categoryType[1] as String, style: .Default) { (action) -> Void in
-            self.categoryNameTextField.hidden = false
-            self.categoryTypeBtn.setTitle("   Employee", forState: .Normal)
-            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-        }
-        let action2 = UIAlertAction(title: categoryType[2] as String, style: .Default) { (action) -> Void in
-            self.categoryNameTextField.hidden = false
-            self.categoryTypeBtn.setTitle("   Company", forState: .Normal)
-            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-        }
-        let action3 = UIAlertAction(title: categoryType[3] as String, style: .Default) { (action) -> Void in
-            self.categoryNameTextField.hidden = false
-            self.categoryTypeBtn.setTitle("   Non-Profit Organisation", forState: .Normal)
-            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-        }
-        let action4 = UIAlertAction(title: categoryType[4] as String, style: .Default) { (action) -> Void in
-            self.categoryTypeBtn.setTitle("   Non-Profit Organisation Employee", forState: .Normal)
-            self.categoryNameTextField.hidden = false
-            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-        }
-        // Add Actions
-        alertController.addAction(action)
-        alertController.addAction(action1)
-        alertController.addAction(action2)
-        alertController.addAction(action3)
-        alertController.addAction(action4)
-        // Present Alert Controller
-        self.presentViewController(alertController, animated: true, completion: nil)
+        
+//        let alertController = UIAlertController()
+//        
+//        let actionTitle = UIAlertAction(title:"Select Account Type", style: .Default) { (action) -> Void in
+//            self.categoryNameTextField.hidden = true
+//            self.categoryTypeBtn.setTitle("   Individual", forState: .Normal)
+//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
+//            
+//        }
+//        
+//        // Initialize Actions
+//        let action = UIAlertAction(title: categoryType[0] as String, style:.Default) { (action) -> Void in
+//            
+//            self.categoryNameTextField.hidden = true
+//            self.categoryTypeBtn.setTitle("   Individual", forState: .Normal)
+//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
+//           
+//            
+//        }
+//        
+//        let action1 = UIAlertAction(title: categoryType[1] as String, style: .Default) { (action) -> Void in
+//            self.categoryNameTextField.hidden = false
+//            self.categoryTypeBtn.setTitle("   Employee", forState: .Normal)
+//            self.categoryNameTextField.placeholder = "Company Name"
+//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+//        }
+//        let action2 = UIAlertAction(title: categoryType[2] as String, style: .Default) { (action) -> Void in
+//            self.categoryNameTextField.hidden = false
+//            self.categoryTypeBtn.setTitle("   Company", forState: .Normal)
+//            self.categoryNameTextField.placeholder = "Company Name"
+//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+//        }
+//        let action3 = UIAlertAction(title: categoryType[3] as String, style: .Default) { (action) -> Void in
+//            self.categoryNameTextField.hidden = false
+//            self.categoryTypeBtn.setTitle("   Non-Profit Organisation", forState: .Normal)
+//            self.categoryNameTextField.placeholder = "Non-Profit Organisation"
+//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+//        }
+//        let action4 = UIAlertAction(title: categoryType[4] as String, style: .Default) { (action) -> Void in
+//            self.categoryTypeBtn.setTitle("   Non-Profit Organisation Employee", forState: .Normal)
+//            self.categoryNameTextField.placeholder = "Non-Profit Organisation Employee"
+//            self.categoryNameTextField.hidden = false
+//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+//        }
+//        // Add Actions
+//        let image = UIImage(named: "icon_password.png")
+//        action.setValue(image, forKey: "image")
+//        
+//        alertController.addAction(actionTitle)
+//        alertController.addAction(action)
+//        alertController.addAction(action1)
+//        alertController.addAction(action2)
+//        alertController.addAction(action3)
+//        alertController.addAction(action4)
+//        
+////        let paragraphStyle = NSMutableParagraphStyle()
+////        paragraphStyle.alignment = NSTextAlignment.Left
+////        
+////        let messageText = NSMutableAttributedString(
+////            string: kTermsAndConditions,
+////            attributes: [
+////                NSParagraphStyleAttributeName: paragraphStyle,
+////                NSFontAttributeName: UIFont.systemFontOfSize(13.0)
+////            ]
+//////        )
+////        
+////        alertController.setValue(messageText, forKey: "attributedMessage")
+//        alertController.view.backgroundColor = UIColor.blueColor()
+//        // Present Alert Controller
+//        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
 
@@ -165,7 +234,7 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate{
                 {
                 //init?( Username : String, Password : String, ConfirmPassword : String, email : String, PhoneNumber : String, CPPAccountType: String,IsCompany:Bool,IsEmployee : Bool, IsIndividual : Bool, ISCharity : Bool, IsCharityEmployee: Bool, UserDeviceID : String, stripeCode : String)
                 
-                let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Stripe",IsCompany: false,IsEmployee : false, IsIndividual : true, ISCharity : false, IsCharityEmployee: false, UserDeviceID : "", stripeCode : "")!
+                let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Stripe",IsCompany: false,IsEmployee : false, IsIndividual : false, ISCharity : false, IsCharityEmployee: false, UserDeviceID : "", stripeCode : "")!
                 let serializedjson  = JSONSerializer.toJson(signupViewmodel)
                 print(serializedjson)
                     

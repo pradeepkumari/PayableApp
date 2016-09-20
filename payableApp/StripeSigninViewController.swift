@@ -9,7 +9,18 @@
 import UIKit
 
 class StripeSigninViewController: UIViewController {
-
+    
+    @IBOutlet weak var signIn: UIImageView!
+    @IBOutlet weak var sumupImage: UIImageView!
+    @IBOutlet weak var stripeImage: UIImageView!
+    @IBOutlet weak var changeInfo: UIImageView!
+    @IBOutlet weak var removeAccount: UIImageView!
+    var sumupImageClicked:Bool = false
+    var stripeSigninImageClicked:Bool = false
+    var signinImageClicked:Bool = false
+    var changeInfoImageClicked:Bool = false
+    var removeAccountImageClicked:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,17 +32,63 @@ class StripeSigninViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func stripeSignInAction(sender: AnyObject) {
-        self.performSegueWithIdentifier("goto_HomePage", sender: self)
+    @IBAction func sumupAction(sender: AnyObject) {
+    
+        if sumupImageClicked == false
+        {
+            sumupImage.image = UIImage(named: "icon_username.png")
+        }
+        else
+        {
+           sumupImage.image = UIImage(named: "icon_password.png")
+        }
+
         
     }
 
+    @IBAction func stripeSigninAction(sender: AnyObject) {
+        if stripeSigninImageClicked == false
+        {
+            stripeImage.image = UIImage(named: "icon_username.png")
+        }
+        else
+        {
+            stripeImage.image = UIImage(named: "icon_password.png")
+        }
+    }
     @IBAction func signInLaterAction(sender: AnyObject) {
+        if signinImageClicked == false
+        {
+            signIn.image = UIImage(named: "icon_username.png")
+        }
+        else
+        {
+            signIn.image = UIImage(named: "icon_password.png")
+        }
     }
-    @IBAction func changeInfo(sender: AnyObject) {
+    @IBAction func changeInfoAction(sender: AnyObject) {
+        if changeInfoImageClicked == false
+        {
+            changeInfo.image = UIImage(named: "icon_username.png")
+        }
+        else
+        {
+            changeInfo.image = UIImage(named: "icon_password.png")
+        }
     }
-   
-    @IBAction func removeAccount(sender: AnyObject) {
+    @IBAction func removeAccountAction(sender: AnyObject) {
+        if removeAccountImageClicked == false
+        {
+            removeAccount.image = UIImage(named: "icon_username.png")
+        }
+        else
+        {
+            removeAccount.image = UIImage(named: "icon_password.png")
+        }
+    }
+    @IBAction func nextButton(sender: AnyObject)
+    {
+        self.performSegueWithIdentifier("goto_HomePage", sender: self)
     }
     /*
     // MARK: - Navigation

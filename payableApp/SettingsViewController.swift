@@ -16,10 +16,16 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var taxAndTipsView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        self.segmentedControl.layer.cornerRadius = 30.0
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,11 +37,12 @@ class SettingsViewController: UIViewController {
             case 0:
                 self.businessLogoView.hidden = false
                 self.taxAndTipsView.hidden = true
+//                segmentedControl.tintColor = UIColor.blueColor()
             
             case 1:
                 self.businessLogoView.hidden = true
                 self.taxAndTipsView.hidden = false
-               
+//               segmentedControl.tintColor = UIColor.blueColor()
              
                 
             default:
@@ -44,6 +51,9 @@ class SettingsViewController: UIViewController {
             
         }
     
+    @IBAction func homeButtonAction(sender: AnyObject) {
+        self.performSegueWithIdentifier("goto_Homepage", sender: self)
+    }
 
     @IBAction func updateButtonAction(sender: AnyObject) {
     }

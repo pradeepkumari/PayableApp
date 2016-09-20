@@ -10,13 +10,15 @@ import UIKit
 
 class AccountInfoViewController: UIViewController {
     @IBOutlet weak var commentButton: UIButton!
-
+    
     @IBAction func indexButton(sender: AnyObject) {
-        switch mySegmentedControl.selectedSegmentIndex {
+       
+                switch mySegmentedControl.selectedSegmentIndex {
         case 0:
             self.updateInformationView.hidden = false
             self.changePasswordView.hidden = true
             self.supportView.hidden = true
+            
         case 1:
             self.updateInformationView.hidden = true
             self.changePasswordView.hidden = false
@@ -24,8 +26,8 @@ class AccountInfoViewController: UIViewController {
             
         case 2:
             self.updateInformationView.hidden = true
-            self.supportView.hidden = false
             self.changePasswordView.hidden = true
+            self.supportView.hidden = false
             
         default:
             break;
@@ -47,20 +49,21 @@ class AccountInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        self.createBottomLineTextField(newPwd)
-        self.createBottomLineTextField(confirmPwd)
        
-//        
-//        self.profilePicture = UIImageView(frame: CGRectMake(0, 0, self.view.bounds.width * 0.19 , self.view.bounds.height * 0.1))
-//        self.profilePicture.layer.borderWidth = 1
-//        self.profilePicture.layer.masksToBounds = false
-//        self.profilePicture.layer.borderColor = UIColor.blackColor().CGColor
-//        self.profilePicture.layer.cornerRadius = profilePicture.frame.height/2
-//        self.profilePicture.clipsToBounds = true
-//        blurImageView.addSubview(profilePicture)
+        
+       self.mySegmentedControl.layer.cornerRadius = 45.0
+//        self.mySegmentedControl.layer.masksToBounds = true
+//        self.mySegmentedControl.tintColor = UIColor.whiteColor()
+//
+        self.updateInformationView.hidden = false
+        self.changePasswordView.hidden = true
+        self.supportView.hidden = true
+        
+        
         
         // Do any additional setup after loading the view.
     }
+    
     func createBottomLineTextField(textField:UITextField)
     {
         let bottomLine = CALayer()
@@ -71,23 +74,52 @@ class AccountInfoViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-         segmentsLabelName = ["SUPPORT","CHANGE PASSWORD","UPDATE INFORMATION"]
-        for var k=0;k<3;k++
-        {
-            let text: NSString = segmentsLabelName[k];
-            print(text)
-            let label = UILabel()
-            label.frame = CGRectMake(10,2, (self.mySegmentedControl.frame.size.width/6), 40)
-            label.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
-            label.textColor = UIColor.blackColor()
-            label.text = text as String
-            label.numberOfLines = 0
-            label.textAlignment = NSTextAlignment.Center
-            label.sizeToFit()
-            self.mySegmentedControl.subviews[k].addSubview(label)
-        }
+        self.createBottomLineTextField(newPwd)
+        self.createBottomLineTextField(confirmPwd)
+        self.profilePicture.layer.borderWidth = 1
+        self.profilePicture.layer.masksToBounds = false
+        self.profilePicture.layer.borderColor = UIColor.blackColor().CGColor
+        self.profilePicture.layer.cornerRadius = profilePicture.frame.height/2
+        self.profilePicture.clipsToBounds = true
+        blurImageView.addSubview(profilePicture)
+        
+        self.makeBlurImage(blurImageView)
+        
+        
+//         segmentsLabelName = ["SUPPORT","CHANGE PASSWORD","UPDATE INFORMATION"]
+//        for var k=0;k<3;k++
+//        {
+//            let text: NSString = segmentsLabelName[k];
+//            print(text)
+//            let label = UILabel()
+//            label.frame = CGRectMake(10,2, (self.mySegmentedControl.frame.size.width/6), 40)
+//            label.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
+////            label.textColor = UIColor.whiteColor()
+//            label.text = text as String
+//            label.numberOfLines = 0
+//            label.textAlignment = NSTextAlignment.Center
+//            label.sizeToFit()
+//            self.mySegmentedControl.subviews[k].addSubview(label)
+//        }
+//        
+        
+        
     }
     
+    
+    func makeBlurImage(targetImageView:UIImageView?)
+    {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = targetImageView!.bounds
+        
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+        targetImageView?.addSubview(blurEffectView)
+    }
+    
+    @IBAction func homeButtonAction(sender: AnyObject) {
+        self.performSegueWithIdentifier("goto_Homepage", sender: self)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
