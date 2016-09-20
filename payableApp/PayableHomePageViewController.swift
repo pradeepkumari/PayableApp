@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PayableHomePageViewController: UIViewController {
+class PayableHomePageViewController: UIViewController,UITextViewDelegate {
 
     @IBOutlet weak var onlyNumberView: UIView!
   
@@ -49,45 +49,58 @@ class PayableHomePageViewController: UIViewController {
 ////
         
     }
+    func textViewDidChange(descriptionField: UITextView) {
+        if descriptionField.text.isEmpty == false {
+            descriptionTextView.text = ""
+        } else {
+            descriptionTextView.text = "Description"
+        }
+    }
     override func viewWillAppear(animated: Bool) {
         
         self.createBottomLineTextField(chargeAmountTextField)
         print(self.view.frame.size.width)
         
+        
         let employeeViewButton = UIButton(frame: CGRectMake(5,5,(self.view.frame.size.width-20)/3-10,menuBarView.frame.size.height/2-12.5))
         print((menuBarView.frame.origin.x+5,5,(self.view.frame.size.width-20)/3-10,menuBarView.frame.size.height/2-12.5))
-//        employeeViewButton.setTitle("Employee", forState: .Normal)
+        employeeViewButton.setTitle("Employee", forState: .Normal)
 //        employeeViewButton.tintColor = UIColor.whiteColor()
         employeeViewButton.backgroundColor = UIColor(red: 220/255.0, green: 98/255.0, blue: 94/255.0, alpha: 1.0)
-        let employeeImage = UIImage(named: "usedimages.png")
+        let employeeImage = UIImage(named: "ic_employee@2x.png")
         employeeViewButton.setImage(employeeImage, forState: .Normal)
-        employeeViewButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 20, 20);
+        employeeViewButton.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 20, 20);
         employeeViewButton.addTarget(self, action: "employeeAction:", forControlEvents: .TouchUpInside)
         menuBarView.addSubview(employeeViewButton)
-        let employeeLabel = UILabel(frame: CGRectMake(employeeViewButton.frame.size.width/2-30,employeeViewButton.frame.size.height-20,0,0))
+        
+        employeeViewButton.titleEdgeInsets = UIEdgeInsetsMake(65, -65, 0, 0);
+//        let employeeLabel = UILabel(frame: CGRectMake(employeeViewButton.frame.size.width/2-30,employeeViewButton.frame.size.height-20,0,0))
+//         employeeViewButton.titleEdgeInsets = UIEdgeInsets(top: 108, left: 0, bottom: 0, right: 0)
 //        let xConstraint = NSLayoutConstraint(item: employeeLabel, attribute: .CenterX, relatedBy: .Equal, toItem: employeeViewButton, attribute: .CenterX, multiplier: 1, constant: 0)
 //        employeeLabel.addConstraint(xConstraint)
-        employeeLabel.text = "Employee"
-        employeeLabel.textColor = UIColor.whiteColor()
-        employeeLabel.sizeToFit()
-        employeeViewButton.addSubview(employeeLabel)
+//        employeeLabel.text = "Employee"
+//        employeeLabel.textColor = UIColor.whiteColor()
+//        employeeLabel.sizeToFit()
+//        employeeViewButton.addSubview(employeeLabel)
         
         
         let accountViewButton = UIButton(frame: CGRectMake(5,employeeViewButton.frame.origin.y+employeeViewButton.frame.size.height+15,(self.view.frame.size.width-20)/3-10,menuBarView.frame.size.height/2-12.5))
         print((menuBarView.frame.origin.x+5,employeeViewButton.frame.origin.y+employeeViewButton.frame.size.height+15,(self.view.frame.size.width-20)/3-10,menuBarView.frame.size.height/2-12.5))
         accountViewButton.setTitle("Account", forState: .Normal)
         accountViewButton.backgroundColor = UIColor(red: 100/255.0, green: 114/255.0, blue: 202/255.0, alpha: 1.0)
-        let image = UIImage(named: "account.png")
+        let image = UIImage(named: "ic_account@2x.png")
         accountViewButton.setImage(image, forState: .Normal)
-        accountViewButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 20, 20);
+        accountViewButton.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 20, 20);
         accountViewButton.addTarget(self, action: "accountViewAction:", forControlEvents: .TouchUpInside)
          menuBarView.addSubview(accountViewButton)
         
-        let accountLabel = UILabel(frame: CGRectMake(accountViewButton.frame.size.width/2-30,accountViewButton.frame.size.height-20,0,0))
-        accountLabel.text = "Account"
-        accountLabel.textColor = UIColor.whiteColor()
-        accountLabel.sizeToFit()
-        accountViewButton.addSubview(accountLabel)
+        accountViewButton.titleEdgeInsets = UIEdgeInsetsMake(65, -65, 0, 0);
+        
+//        let accountLabel = UILabel(frame: CGRectMake(accountViewButton.frame.size.width/2-30,accountViewButton.frame.size.height-20,0,0))
+//        accountLabel.text = "Account"
+//        accountLabel.textColor = UIColor.whiteColor()
+//        accountLabel.sizeToFit()
+//        accountViewButton.addSubview(accountLabel)
         
        
         
@@ -95,17 +108,19 @@ class PayableHomePageViewController: UIViewController {
         print((employeeViewButton.frame.origin.x+employeeViewButton.frame.size.height+15 ,5,(self.view.frame.size.width-20)/3-10,menuBarView.frame.size.height/2-12.5))
         settingsViewButton.setTitle("Settings", forState: .Normal)
         settingsViewButton.backgroundColor = UIColor(red: 180/255.0, green: 157/255.0, blue: 68/255.0, alpha: 1.0)
-        let settingsImage = UIImage(named: "settings.png")
+        let settingsImage = UIImage(named: "ic_settings@2x.png")
         settingsViewButton.setImage(settingsImage, forState: .Normal)
-        settingsViewButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 20, 20);
+        settingsViewButton.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 20, 20);
         settingsViewButton.addTarget(self, action: "settingsAction:", forControlEvents: .TouchUpInside)
+        
+        settingsViewButton.titleEdgeInsets = UIEdgeInsetsMake(65, -65, 0, 0);
         menuBarView.addSubview(settingsViewButton)
         
-        let settingsLabel = UILabel(frame: CGRectMake(settingsViewButton.frame.width/2-30,settingsViewButton.frame.size.height-20,0,0))
-        settingsLabel.text = "Settings"
-        settingsLabel.textColor = UIColor.whiteColor()
-        settingsLabel.sizeToFit()
-        settingsViewButton.addSubview(settingsLabel)
+//        let settingsLabel = UILabel(frame: CGRectMake(settingsViewButton.frame.width/2-30,settingsViewButton.frame.size.height-20,0,0))
+//        settingsLabel.text = "Settings"
+//        settingsLabel.textColor = UIColor.whiteColor()
+//        settingsLabel.sizeToFit()
+//        settingsViewButton.addSubview(settingsLabel)
         
         
         
@@ -113,17 +128,18 @@ class PayableHomePageViewController: UIViewController {
         print((accountViewButton.frame.origin.x+accountViewButton.frame.size.height+15,employeeViewButton.frame.origin.y+employeeViewButton.frame.size.height+15,(self.view.frame.size.width-20)/3-10,menuBarView.frame.size.height/2-12.5))
         historyViewButton.setTitle("History", forState: .Normal)
         historyViewButton.backgroundColor = UIColor(red: 68/255.0, green: 172/255.0, blue: 164/255.0, alpha: 1.0)
-        let historyImage = UIImage(named: "history.png")
+        let historyImage = UIImage(named: "ic_history@2x.png")
         historyViewButton.setImage(historyImage, forState: .Normal)
-        historyViewButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 20, 20);
+        historyViewButton.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 20, 20);
         historyViewButton.addTarget(self, action: "historyAction:", forControlEvents: .TouchUpInside)
+        historyViewButton.titleEdgeInsets = UIEdgeInsetsMake(65, -65, 0, 0);
         menuBarView.addSubview(historyViewButton)
         
-        let historyLabel = UILabel(frame: CGRectMake(historyViewButton.frame.size.width/2-30,historyViewButton.frame.size.height-20,0,0))
-        historyLabel.text = "History"
-        historyLabel.textColor = UIColor.whiteColor()
-        historyLabel.sizeToFit()
-        historyViewButton.addSubview(historyLabel)
+//        let historyLabel = UILabel(frame: CGRectMake(historyViewButton.frame.size.width/2-30,historyViewButton.frame.size.height-20,0,0))
+//        historyLabel.text = "History"
+//        historyLabel.textColor = UIColor.whiteColor()
+//        historyLabel.sizeToFit()
+//        historyViewButton.addSubview(historyLabel)
         
         
         
@@ -131,35 +147,39 @@ class PayableHomePageViewController: UIViewController {
         print((settingsViewButton.frame.origin.x+settingsViewButton.frame.size.height+15 ,5,(self.view.frame.size.width-20)/3-10,menuBarView.frame.size.height/2-12.5))
         dashBoardViewButton.setTitle("Stripe Dashboard", forState: .Normal)
         dashBoardViewButton.backgroundColor = UIColor(red: 186/255.0, green: 91/255.0, blue: 204/255.0, alpha: 1.0)
-        let dashboardImage = UIImage(named: "stripe.png")
+        let dashboardImage = UIImage(named: "ic_dashboard@2x.png")
         dashBoardViewButton.setImage(dashboardImage, forState: .Normal)
-        dashBoardViewButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 20, 20);
+        dashBoardViewButton.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 20, 20);
         dashBoardViewButton.addTarget(self, action: "stripeAction:", forControlEvents: .TouchUpInside)
+        dashBoardViewButton.titleLabel?.numberOfLines = 2
+        dashBoardViewButton.titleLabel?.textAlignment = NSTextAlignment.Center
+        dashBoardViewButton.titleEdgeInsets = UIEdgeInsetsMake(45, -65, 0, 0);
         menuBarView.addSubview(dashBoardViewButton)
         
-        let stripeLabel = UILabel(frame: CGRectMake(0,dashBoardViewButton.frame.size.height-20,0,0))
-        stripeLabel.text = "Stripe Dashboard"
-        stripeLabel.textColor = UIColor.whiteColor()
-        stripeLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        stripeLabel.numberOfLines = 2
-        stripeLabel.sizeToFit()
-        dashBoardViewButton.addSubview(stripeLabel)
+//        let stripeLabel = UILabel(frame: CGRectMake(0,dashBoardViewButton.frame.size.height-20,0,0))
+//        stripeLabel.text = "Stripe Dashboard"
+//        stripeLabel.textColor = UIColor.whiteColor()
+//        stripeLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+//        stripeLabel.numberOfLines = 2
+//        stripeLabel.sizeToFit()
+//        dashBoardViewButton.addSubview(stripeLabel)
         
         let logoutViewButton = UIButton(frame: CGRectMake(historyViewButton.frame.origin.x+historyViewButton.frame.size.width+15,employeeViewButton.frame.origin.y+employeeViewButton.frame.size.height+15,(self.view.frame.size.width-20)/3-10,menuBarView.frame.size.height/2-12.5))
         print((historyViewButton.frame.origin.x+historyViewButton.frame.size.height+15,employeeViewButton.frame.origin.y+employeeViewButton.frame.size.height+15,(self.view.frame.size.width-20)/3-10,menuBarView.frame.size.height/2-12.5))
         logoutViewButton.setTitle("LogOut", forState: .Normal)
         logoutViewButton.backgroundColor = UIColor(red: 212/255.0, green: 70/255.0, blue: 119/255.0, alpha: 1.0)
-        let logoutImage = UIImage(named: "logout.png")
+        let logoutImage = UIImage(named: "ic_logout@2x.png")
         logoutViewButton.setImage(logoutImage, forState: .Normal)
-        logoutViewButton.imageEdgeInsets = UIEdgeInsetsMake(10, 20, 20, 20);
+        logoutViewButton.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 20, 20);
         logoutViewButton.addTarget(self, action: "logoutAction:", forControlEvents: .TouchUpInside)
+        logoutViewButton.titleEdgeInsets = UIEdgeInsetsMake(65, -65, 0, 0);
         menuBarView.addSubview(logoutViewButton)
         
-        let logoutLabel = UILabel(frame: CGRectMake(logoutViewButton.frame.size.width/2-30,logoutViewButton.frame.size.height-20,0,0))
-        logoutLabel.text = "Logout"
-        logoutLabel.textColor = UIColor.whiteColor()
-        logoutLabel.sizeToFit()
-        logoutViewButton.addSubview(logoutLabel)
+//        let logoutLabel = UILabel(frame: CGRectMake(logoutViewButton.frame.size.width/2-30,logoutViewButton.frame.size.height-20,0,0))
+//        logoutLabel.text = "Logout"
+//        logoutLabel.textColor = UIColor.whiteColor()
+//        logoutLabel.sizeToFit()
+//        logoutViewButton.addSubview(logoutLabel)
         
         self.createNumberPadButton()
     }
@@ -320,6 +340,30 @@ class PayableHomePageViewController: UIViewController {
     }
     
     
+    
+    func displayViewController(animationType: SLpopupViewAnimationType) {
+        let myPopupViewController:MyPopupViewController = MyPopupViewController(nibName:"MyPopupViewController", bundle: nil)
+        //        myPopupViewController.delegate = self
+        self.presentpopupViewController(myPopupViewController, animationType: animationType, completion: { () -> Void in
+            
+        })
+    }
+    
+    
+    @IBAction func chargeOptionBtnAction(sender: AnyObject) {
+        
+//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("popOver")
+//        self.addChildViewController(popOverVC)
+//        popOverVC.view.frame = CGRectMake(25, 100, self.view.frame.size.width - 100, self.view.frame.size.height - 250)
+//        popOverVC.modalPresentationStyle = .Popover
+//        self.view.addSubview(popOverVC.view)
+//        popOverVC.didMoveToParentViewController(self)
+        
+            
+            self.displayViewController(.BottomTop)
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -13,7 +13,7 @@ class StripeDashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = NSURL (string: "https://.stripe.com")
+        let url = NSURL (string: "https://www.google.com")
                 let requestObj = NSURLRequest(URL: url!);
                 webView.loadRequest(requestObj)
         

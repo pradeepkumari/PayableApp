@@ -36,11 +36,11 @@ class StripeSigninViewController: UIViewController {
     
         if sumupImageClicked == false
         {
-            sumupImage.image = UIImage(named: "icon_username.png")
+            sumupImage.image = UIImage(named: "rightunselected@2x.png")
         }
         else
         {
-           sumupImage.image = UIImage(named: "icon_password.png")
+           sumupImage.image = UIImage(named: "rightselected@2x.png")
         }
 
         
@@ -49,41 +49,41 @@ class StripeSigninViewController: UIViewController {
     @IBAction func stripeSigninAction(sender: AnyObject) {
         if stripeSigninImageClicked == false
         {
-            stripeImage.image = UIImage(named: "icon_username.png")
+            stripeImage.image = UIImage(named: "rightunselected@2x.png")
         }
         else
         {
-            stripeImage.image = UIImage(named: "icon_password.png")
+            stripeImage.image = UIImage(named: "rightselected@2x.png")
         }
     }
     @IBAction func signInLaterAction(sender: AnyObject) {
         if signinImageClicked == false
         {
-            signIn.image = UIImage(named: "icon_username.png")
+            signIn.image = UIImage(named: "rightunselected@2x.png")
         }
         else
         {
-            signIn.image = UIImage(named: "icon_password.png")
+            signIn.image = UIImage(named: "rightselected@2x.png")
         }
     }
     @IBAction func changeInfoAction(sender: AnyObject) {
         if changeInfoImageClicked == false
         {
-            changeInfo.image = UIImage(named: "icon_username.png")
+            changeInfo.image = UIImage(named: "rightunselected@2x.png")
         }
         else
         {
-            changeInfo.image = UIImage(named: "icon_password.png")
+            changeInfo.image = UIImage(named: "rightselected@2x.png")
         }
     }
     @IBAction func removeAccountAction(sender: AnyObject) {
         if removeAccountImageClicked == false
         {
-            removeAccount.image = UIImage(named: "icon_username.png")
+            removeAccount.image = UIImage(named: "rightunselected@2x.png")
         }
         else
         {
-            removeAccount.image = UIImage(named: "icon_password.png")
+            removeAccount.image = UIImage(named: "rightselected@2x.png")
         }
     }
     @IBAction func nextButton(sender: AnyObject)

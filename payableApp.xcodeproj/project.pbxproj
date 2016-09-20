@@ -37,6 +37,46 @@
 		18C669791D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C669781D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png */; };
 		18C6697B1D8853B7000F8BBA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6697A1D8853B7000F8BBA /* SignUpViewController.swift */; };
 		18D6F1F31D910E5C00B9D985 /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6F1F21D910E5C00B9D985 /* PopOverViewController.swift */; };
+		18D6F2101D91598E00B9D985 /* UIVViewController-SLPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6F20F1D91598E00B9D985 /* UIVViewController-SLPopup.swift */; };
+		18D6F2131D91709000B9D985 /* MyPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6F2111D91709000B9D985 /* MyPopupViewController.swift */; };
+		18D6F2141D91709000B9D985 /* MyPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2121D91709000B9D985 /* MyPopupViewController.xib */; };
+		18D6F2381D91895E00B9D985 /* calendar_selction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2151D91895E00B9D985 /* calendar_selction@2x.png */; };
+		18D6F2391D91895E00B9D985 /* ic_account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2161D91895E00B9D985 /* ic_account@2x.png */; };
+		18D6F23A1D91895E00B9D985 /* ic_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2171D91895E00B9D985 /* ic_back@2x.png */; };
+		18D6F23B1D91895E00B9D985 /* ic_bitcoin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2181D91895E00B9D985 /* ic_bitcoin@2x.png */; };
+		18D6F23C1D91895E00B9D985 /* ic_bootomaccount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2191D91895E00B9D985 /* ic_bootomaccount@2x.png */; };
+		18D6F23D1D91895E00B9D985 /* ic_bottomchangepswd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F21A1D91895E00B9D985 /* ic_bottomchangepswd@2x.png */; };
+		18D6F23E1D91895E00B9D985 /* ic_bottomlogout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F21B1D91895E00B9D985 /* ic_bottomlogout@2x.png */; };
+		18D6F23F1D91895E00B9D985 /* ic_dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F21C1D91895E00B9D985 /* ic_dashboard@2x.png */; };
+		18D6F2401D91895E00B9D985 /* ic_employee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F21D1D91895E00B9D985 /* ic_employee@2x.png */; };
+		18D6F2411D91895E00B9D985 /* ic_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F21E1D91895E00B9D985 /* ic_history@2x.png */; };
+		18D6F2421D91895E00B9D985 /* ic_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F21F1D91895E00B9D985 /* ic_home@2x.png */; };
+		18D6F2431D91895E00B9D985 /* ic_logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2201D91895E00B9D985 /* ic_logout@2x.png */; };
+		18D6F2441D91895E00B9D985 /* ic_mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2211D91895E00B9D985 /* ic_mail@2x.png */; };
+		18D6F2451D91895E00B9D985 /* ic_mycard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2221D91895E00B9D985 /* ic_mycard@2x.png */; };
+		18D6F2461D91895E00B9D985 /* ic_np_company@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2231D91895E00B9D985 /* ic_np_company@2x.png */; };
+		18D6F2471D91895E00B9D985 /* ic_np_employee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2241D91895E00B9D985 /* ic_np_employee@2x.png */; };
+		18D6F2481D91895E00B9D985 /* ic_np_individual@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2251D91895E00B9D985 /* ic_np_individual@2x.png */; };
+		18D6F2491D91895E00B9D985 /* ic_np_organization_employee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2261D91895E00B9D985 /* ic_np_organization_employee@2x.png */; };
+		18D6F24A1D91895E00B9D985 /* ic_np_organization@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2271D91895E00B9D985 /* ic_np_organization@2x.png */; };
+		18D6F24B1D91895E00B9D985 /* ic_payinvoice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2281D91895E00B9D985 /* ic_payinvoice@2x.png */; };
+		18D6F24C1D91895E00B9D985 /* ic_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2291D91895E00B9D985 /* ic_phone@2x.png */; };
+		18D6F24D1D91895E00B9D985 /* ic_qr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F22A1D91895E00B9D985 /* ic_qr@2x.png */; };
+		18D6F24E1D91895E00B9D985 /* ic_scancard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F22B1D91895E00B9D985 /* ic_scancard@2x.png */; };
+		18D6F24F1D91895E00B9D985 /* ic_sendinvoice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F22C1D91895E00B9D985 /* ic_sendinvoice@2x.png */; };
+		18D6F2501D91895E00B9D985 /* ic_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F22D1D91895E00B9D985 /* ic_settings@2x.png */; };
+		18D6F2511D91895E00B9D985 /* ic_username@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F22E1D91895E00B9D985 /* ic_username@2x.png */; };
+		18D6F2521D91895E00B9D985 /* inputarea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F22F1D91895E00B9D985 /* inputarea@2x.png */; };
+		18D6F2531D91895E00B9D985 /* inputbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2301D91895E00B9D985 /* inputbox@2x.png */; };
+		18D6F2541D91895E00B9D985 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2311D91895E00B9D985 /* logo@2x.png */; };
+		18D6F2551D91895E00B9D985 /* password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2321D91895E00B9D985 /* password@2x.png */; };
+		18D6F2561D91895E00B9D985 /* rightselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2331D91895E00B9D985 /* rightselected@2x.png */; };
+		18D6F2571D91895E00B9D985 /* rightunselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2341D91895E00B9D985 /* rightunselected@2x.png */; };
+		18D6F2581D91895E00B9D985 /* switch_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2351D91895E00B9D985 /* switch_off@2x.png */; };
+		18D6F2591D91895E00B9D985 /* switch_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2361D91895E00B9D985 /* switch_on@2x.png */; };
+		18D6F25A1D91895E00B9D985 /* tosandroidpaybutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F2371D91895E00B9D985 /* tosandroidpaybutton@2x.png */; };
+		18D6F25D1D91970500B9D985 /* SelectAccountAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6F25B1D91970500B9D985 /* SelectAccountAlertViewController.swift */; };
+		18D6F25E1D91970500B9D985 /* SelectAccountAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F25C1D91970500B9D985 /* SelectAccountAlertViewController.xib */; };
 		18E8BA721D8C47E100B5F56A /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA6C1D8C47E100B5F56A /* account.png */; };
 		18E8BA731D8C47E100B5F56A /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA6D1D8C47E100B5F56A /* history.png */; };
 		18E8BA741D8C47E100B5F56A /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8BA6E1D8C47E100B5F56A /* logout.png */; };
@@ -109,6 +149,46 @@
 		18C669781D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2016-09-12 at 6.44.23 PM.png"; path = "../../Screen Shot 2016-09-12 at 6.44.23 PM.png"; sourceTree = "<group>"; };
 		18C6697A1D8853B7000F8BBA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		18D6F1F21D910E5C00B9D985 /* PopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
+		18D6F20F1D91598E00B9D985 /* UIVViewController-SLPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVViewController-SLPopup.swift"; sourceTree = "<group>"; };
+		18D6F2111D91709000B9D985 /* MyPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPopupViewController.swift; sourceTree = "<group>"; };
+		18D6F2121D91709000B9D985 /* MyPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPopupViewController.xib; sourceTree = "<group>"; };
+		18D6F2151D91895E00B9D985 /* calendar_selction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_selction@2x.png"; sourceTree = "<group>"; };
+		18D6F2161D91895E00B9D985 /* ic_account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_account@2x.png"; sourceTree = "<group>"; };
+		18D6F2171D91895E00B9D985 /* ic_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_back@2x.png"; sourceTree = "<group>"; };
+		18D6F2181D91895E00B9D985 /* ic_bitcoin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bitcoin@2x.png"; sourceTree = "<group>"; };
+		18D6F2191D91895E00B9D985 /* ic_bootomaccount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bootomaccount@2x.png"; sourceTree = "<group>"; };
+		18D6F21A1D91895E00B9D985 /* ic_bottomchangepswd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bottomchangepswd@2x.png"; sourceTree = "<group>"; };
+		18D6F21B1D91895E00B9D985 /* ic_bottomlogout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bottomlogout@2x.png"; sourceTree = "<group>"; };
+		18D6F21C1D91895E00B9D985 /* ic_dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_dashboard@2x.png"; sourceTree = "<group>"; };
+		18D6F21D1D91895E00B9D985 /* ic_employee@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_employee@2x.png"; sourceTree = "<group>"; };
+		18D6F21E1D91895E00B9D985 /* ic_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_history@2x.png"; sourceTree = "<group>"; };
+		18D6F21F1D91895E00B9D985 /* ic_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_home@2x.png"; sourceTree = "<group>"; };
+		18D6F2201D91895E00B9D985 /* ic_logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_logout@2x.png"; sourceTree = "<group>"; };
+		18D6F2211D91895E00B9D985 /* ic_mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_mail@2x.png"; sourceTree = "<group>"; };
+		18D6F2221D91895E00B9D985 /* ic_mycard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_mycard@2x.png"; sourceTree = "<group>"; };
+		18D6F2231D91895E00B9D985 /* ic_np_company@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_np_company@2x.png"; sourceTree = "<group>"; };
+		18D6F2241D91895E00B9D985 /* ic_np_employee@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_np_employee@2x.png"; sourceTree = "<group>"; };
+		18D6F2251D91895E00B9D985 /* ic_np_individual@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_np_individual@2x.png"; sourceTree = "<group>"; };
+		18D6F2261D91895E00B9D985 /* ic_np_organization_employee@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_np_organization_employee@2x.png"; sourceTree = "<group>"; };
+		18D6F2271D91895E00B9D985 /* ic_np_organization@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_np_organization@2x.png"; sourceTree = "<group>"; };
+		18D6F2281D91895E00B9D985 /* ic_payinvoice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_payinvoice@2x.png"; sourceTree = "<group>"; };
+		18D6F2291D91895E00B9D985 /* ic_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_phone@2x.png"; sourceTree = "<group>"; };
+		18D6F22A1D91895E00B9D985 /* ic_qr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_qr@2x.png"; sourceTree = "<group>"; };
+		18D6F22B1D91895E00B9D985 /* ic_scancard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_scancard@2x.png"; sourceTree = "<group>"; };
+		18D6F22C1D91895E00B9D985 /* ic_sendinvoice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_sendinvoice@2x.png"; sourceTree = "<group>"; };
+		18D6F22D1D91895E00B9D985 /* ic_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_settings@2x.png"; sourceTree = "<group>"; };
+		18D6F22E1D91895E00B9D985 /* ic_username@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_username@2x.png"; sourceTree = "<group>"; };
+		18D6F22F1D91895E00B9D985 /* inputarea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inputarea@2x.png"; sourceTree = "<group>"; };
+		18D6F2301D91895E00B9D985 /* inputbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inputbox@2x.png"; sourceTree = "<group>"; };
+		18D6F2311D91895E00B9D985 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		18D6F2321D91895E00B9D985 /* password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password@2x.png"; sourceTree = "<group>"; };
+		18D6F2331D91895E00B9D985 /* rightselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightselected@2x.png"; sourceTree = "<group>"; };
+		18D6F2341D91895E00B9D985 /* rightunselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightunselected@2x.png"; sourceTree = "<group>"; };
+		18D6F2351D91895E00B9D985 /* switch_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch_off@2x.png"; sourceTree = "<group>"; };
+		18D6F2361D91895E00B9D985 /* switch_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch_on@2x.png"; sourceTree = "<group>"; };
+		18D6F2371D91895E00B9D985 /* tosandroidpaybutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tosandroidpaybutton@2x.png"; sourceTree = "<group>"; };
+		18D6F25B1D91970500B9D985 /* SelectAccountAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAccountAlertViewController.swift; sourceTree = "<group>"; };
+		18D6F25C1D91970500B9D985 /* SelectAccountAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectAccountAlertViewController.xib; sourceTree = "<group>"; };
 		18E8BA6C1D8C47E100B5F56A /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = account.png; path = ../../../Downloads/Attachments_2016916/account.png; sourceTree = "<group>"; };
 		18E8BA6D1D8C47E100B5F56A /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history.png; path = ../../../Downloads/Attachments_2016916/history.png; sourceTree = "<group>"; };
 		18E8BA6E1D8C47E100B5F56A /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logout.png; path = ../../../Downloads/Attachments_2016916/logout.png; sourceTree = "<group>"; };
@@ -149,6 +229,7 @@
 		18C536161D8965FB00116795 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				18D6F20E1D91597A00B9D985 /* SLPopUp */,
 				18C536181D89662100116795 /* DBHelper.swift */,
 				18C536191D89662100116795 /* FMDatabase.h */,
 				18C5361A1D89662100116795 /* FMDatabase.m */,
@@ -200,6 +281,8 @@
 				18C669441D87F296000F8BBA /* ViewController.swift */,
 				18C669701D87F2CA000F8BBA /* LoginandSignUpPageViewController.swift */,
 				18C6697A1D8853B7000F8BBA /* SignUpViewController.swift */,
+				18D6F25B1D91970500B9D985 /* SelectAccountAlertViewController.swift */,
+				18D6F25C1D91970500B9D985 /* SelectAccountAlertViewController.xib */,
 				18C536141D8960A700116795 /* PayableHomePageViewController.swift */,
 				18C669781D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png */,
 				18C669721D87F412000F8BBA /* Screen Shot 2016-09-13 at 2.14.25 PM.png */,
@@ -213,6 +296,41 @@
 				18E8BA711D8C47E100B5F56A /* usedimages.png */,
 				18C669461D87F296000F8BBA /* Main.storyboard */,
 				18C669491D87F296000F8BBA /* Assets.xcassets */,
+				18D6F2151D91895E00B9D985 /* calendar_selction@2x.png */,
+				18D6F2161D91895E00B9D985 /* ic_account@2x.png */,
+				18D6F2171D91895E00B9D985 /* ic_back@2x.png */,
+				18D6F2181D91895E00B9D985 /* ic_bitcoin@2x.png */,
+				18D6F2191D91895E00B9D985 /* ic_bootomaccount@2x.png */,
+				18D6F21A1D91895E00B9D985 /* ic_bottomchangepswd@2x.png */,
+				18D6F21B1D91895E00B9D985 /* ic_bottomlogout@2x.png */,
+				18D6F21C1D91895E00B9D985 /* ic_dashboard@2x.png */,
+				18D6F21D1D91895E00B9D985 /* ic_employee@2x.png */,
+				18D6F21E1D91895E00B9D985 /* ic_history@2x.png */,
+				18D6F21F1D91895E00B9D985 /* ic_home@2x.png */,
+				18D6F2201D91895E00B9D985 /* ic_logout@2x.png */,
+				18D6F2211D91895E00B9D985 /* ic_mail@2x.png */,
+				18D6F2221D91895E00B9D985 /* ic_mycard@2x.png */,
+				18D6F2231D91895E00B9D985 /* ic_np_company@2x.png */,
+				18D6F2241D91895E00B9D985 /* ic_np_employee@2x.png */,
+				18D6F2251D91895E00B9D985 /* ic_np_individual@2x.png */,
+				18D6F2261D91895E00B9D985 /* ic_np_organization_employee@2x.png */,
+				18D6F2271D91895E00B9D985 /* ic_np_organization@2x.png */,
+				18D6F2281D91895E00B9D985 /* ic_payinvoice@2x.png */,
+				18D6F2291D91895E00B9D985 /* ic_phone@2x.png */,
+				18D6F22A1D91895E00B9D985 /* ic_qr@2x.png */,
+				18D6F22B1D91895E00B9D985 /* ic_scancard@2x.png */,
+				18D6F22C1D91895E00B9D985 /* ic_sendinvoice@2x.png */,
+				18D6F22D1D91895E00B9D985 /* ic_settings@2x.png */,
+				18D6F22E1D91895E00B9D985 /* ic_username@2x.png */,
+				18D6F22F1D91895E00B9D985 /* inputarea@2x.png */,
+				18D6F2301D91895E00B9D985 /* inputbox@2x.png */,
+				18D6F2311D91895E00B9D985 /* logo@2x.png */,
+				18D6F2321D91895E00B9D985 /* password@2x.png */,
+				18D6F2331D91895E00B9D985 /* rightselected@2x.png */,
+				18D6F2341D91895E00B9D985 /* rightunselected@2x.png */,
+				18D6F2351D91895E00B9D985 /* switch_off@2x.png */,
+				18D6F2361D91895E00B9D985 /* switch_on@2x.png */,
+				18D6F2371D91895E00B9D985 /* tosandroidpaybutton@2x.png */,
 				18C6694B1D87F296000F8BBA /* LaunchScreen.storyboard */,
 				18C6694E1D87F296000F8BBA /* Info.plist */,
 				18AB49101D8A795B00B273C9 /* StripeSigninViewController.swift */,
@@ -222,6 +340,8 @@
 				18F690D21D8FB09B00DF1AE9 /* StripeDashboardViewController.swift */,
 				18F690D41D901AC800DF1AE9 /* HistoryViewController.swift */,
 				18D6F1F21D910E5C00B9D985 /* PopOverViewController.swift */,
+				18D6F2111D91709000B9D985 /* MyPopupViewController.swift */,
+				18D6F2121D91709000B9D985 /* MyPopupViewController.xib */,
 			);
 			path = payableApp;
 			sourceTree = "<group>";
@@ -242,6 +362,14 @@
 				18C669641D87F296000F8BBA /* Info.plist */,
 			);
 			path = payableAppUITests;
+			sourceTree = "<group>";
+		};
+		18D6F20E1D91597A00B9D985 /* SLPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				18D6F20F1D91598E00B9D985 /* UIVViewController-SLPopup.swift */,
+			);
+			name = SLPopUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,16 +478,53 @@
 			files = (
 				18E8BA731D8C47E100B5F56A /* history.png in Resources */,
 				18C669791D884976000F8BBA /* Screen Shot 2016-09-12 at 6.44.23 PM.png in Resources */,
+				18D6F2401D91895E00B9D985 /* ic_employee@2x.png in Resources */,
+				18D6F2441D91895E00B9D985 /* ic_mail@2x.png in Resources */,
+				18D6F23C1D91895E00B9D985 /* ic_bootomaccount@2x.png in Resources */,
+				18D6F2581D91895E00B9D985 /* switch_off@2x.png in Resources */,
+				18D6F24C1D91895E00B9D985 /* ic_phone@2x.png in Resources */,
+				18D6F24F1D91895E00B9D985 /* ic_sendinvoice@2x.png in Resources */,
+				18D6F2431D91895E00B9D985 /* ic_logout@2x.png in Resources */,
+				18D6F24E1D91895E00B9D985 /* ic_scancard@2x.png in Resources */,
+				18D6F2481D91895E00B9D985 /* ic_np_individual@2x.png in Resources */,
+				18D6F2491D91895E00B9D985 /* ic_np_organization_employee@2x.png in Resources */,
 				18C669771D880155000F8BBA /* icon_username.png in Resources */,
 				18E8BA751D8C47E100B5F56A /* settings.png in Resources */,
+				18D6F2451D91895E00B9D985 /* ic_mycard@2x.png in Resources */,
 				18E8BA761D8C47E100B5F56A /* stripe.png in Resources */,
+				18D6F2531D91895E00B9D985 /* inputbox@2x.png in Resources */,
+				18D6F23B1D91895E00B9D985 /* ic_bitcoin@2x.png in Resources */,
+				18D6F23F1D91895E00B9D985 /* ic_dashboard@2x.png in Resources */,
 				18C6694D1D87F296000F8BBA /* LaunchScreen.storyboard in Resources */,
+				18D6F23E1D91895E00B9D985 /* ic_bottomlogout@2x.png in Resources */,
+				18D6F2391D91895E00B9D985 /* ic_account@2x.png in Resources */,
 				18E8BA721D8C47E100B5F56A /* account.png in Resources */,
+				18D6F2141D91709000B9D985 /* MyPopupViewController.xib in Resources */,
+				18D6F2551D91895E00B9D985 /* password@2x.png in Resources */,
+				18D6F2541D91895E00B9D985 /* logo@2x.png in Resources */,
+				18D6F23D1D91895E00B9D985 /* ic_bottomchangepswd@2x.png in Resources */,
+				18D6F24A1D91895E00B9D985 /* ic_np_organization@2x.png in Resources */,
+				18D6F23A1D91895E00B9D985 /* ic_back@2x.png in Resources */,
 				18C669751D88014C000F8BBA /* icon_password.png in Resources */,
+				18D6F24B1D91895E00B9D985 /* ic_payinvoice@2x.png in Resources */,
+				18D6F2471D91895E00B9D985 /* ic_np_employee@2x.png in Resources */,
 				18E8BA771D8C47E100B5F56A /* usedimages.png in Resources */,
+				18D6F24D1D91895E00B9D985 /* ic_qr@2x.png in Resources */,
+				18D6F2381D91895E00B9D985 /* calendar_selction@2x.png in Resources */,
+				18D6F2411D91895E00B9D985 /* ic_history@2x.png in Resources */,
 				18C669731D87F412000F8BBA /* Screen Shot 2016-09-13 at 2.14.25 PM.png in Resources */,
 				18E8BA741D8C47E100B5F56A /* logout.png in Resources */,
+				18D6F2511D91895E00B9D985 /* ic_username@2x.png in Resources */,
+				18D6F2421D91895E00B9D985 /* ic_home@2x.png in Resources */,
+				18D6F2571D91895E00B9D985 /* rightunselected@2x.png in Resources */,
+				18D6F2561D91895E00B9D985 /* rightselected@2x.png in Resources */,
+				18D6F2461D91895E00B9D985 /* ic_np_company@2x.png in Resources */,
+				18D6F25A1D91895E00B9D985 /* tosandroidpaybutton@2x.png in Resources */,
+				18D6F2591D91895E00B9D985 /* switch_on@2x.png in Resources */,
+				18D6F25E1D91970500B9D985 /* SelectAccountAlertViewController.xib in Resources */,
+				18D6F2521D91895E00B9D985 /* inputarea@2x.png in Resources */,
 				18C6694A1D87F296000F8BBA /* Assets.xcassets in Resources */,
+				18D6F2501D91895E00B9D985 /* ic_settings@2x.png in Resources */,
 				18C669481D87F296000F8BBA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,12 +565,15 @@
 				18C536151D8960A700116795 /* PayableHomePageViewController.swift in Sources */,
 				18C6697B1D8853B7000F8BBA /* SignUpViewController.swift in Sources */,
 				18F690D31D8FB09B00DF1AE9 /* StripeDashboardViewController.swift in Sources */,
+				18D6F2131D91709000B9D985 /* MyPopupViewController.swift in Sources */,
 				18C536371D8966E200116795 /* JsonSerializerSwift.swift in Sources */,
+				18D6F25D1D91970500B9D985 /* SelectAccountAlertViewController.swift in Sources */,
 				18AB49131D8A8D0D00B273C9 /* AppConstant.swift in Sources */,
 				18C536291D89662100116795 /* FMResultSet.m in Sources */,
 				18C669711D87F2CA000F8BBA /* LoginandSignUpPageViewController.swift in Sources */,
 				18C536261D89662100116795 /* FMDatabaseAdditions.m in Sources */,
 				18AB49151D8ABEC100B273C9 /* AccountInfoViewController.swift in Sources */,
+				18D6F2101D91598E00B9D985 /* UIVViewController-SLPopup.swift in Sources */,
 				18C536431D89674400116795 /* Alert.swift in Sources */,
 				18C536391D8966E200116795 /* SwiftyJson.swift in Sources */,
 			);

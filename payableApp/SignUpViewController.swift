@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UIAlertViewDelegate, UIPopoverPresentationControllerDelegate,UIPopoverControllerDelegate{
+class SignUpViewController: UIViewController, UIAlertViewDelegate {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var categoryNameTextField: UITextField!
@@ -23,9 +23,11 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate, UIPopoverPres
     var accountType: [NSString]! = []
     var categoryType: [NSString]! = []
     var sumUpCheck: Bool = true
+    var screenSize:CGRect!
+    var screenWidth:CGFloat!
+    var screenHeight:CGFloat!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         // Do any additional setup after loading the view.
@@ -36,6 +38,13 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate, UIPopoverPres
         self.createBottomLineTextField(passwordTextField)
         self.createBottomLineTextField(confirmPwdTextField)
         self.createBottomLineTextField(phoneTextField)
+        
+        
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
         
         
         accountType = ["Stripe Sign in ","SumUp Sign in"]
@@ -99,18 +108,18 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate, UIPopoverPres
     
     func addCategory() {
         
-        let popoverContent = (self.storyboard?.instantiateViewControllerWithIdentifier("popOver"))! as! PopOverViewController
-//        let nav = UINavigationController(rootViewController: popoverContent)
-        popoverContent.modalPresentationStyle = .Popover
-        let popover = popoverContent.popoverPresentationController
-        popoverContent.preferredContentSize = CGSizeMake(100,150)
-        popover!.delegate = self
-        popover!.sourceView = self.view
-        popover!.sourceRect = CGRectMake(100,100,0,0)
+//        let popoverContent = (self.storyboard?.instantiateViewControllerWithIdentifier("popOver"))! as! PopOverViewController
+////        let nav = UINavigationController(rootViewController: popoverContent)
+//        popoverContent.modalPresentationStyle = .Popover
+//        let popover = popoverContent.popoverPresentationController
+//        popoverContent.preferredContentSize = CGSizeMake(100,150)
+//        popover!.delegate = self
+//        popover!.sourceView = self.view
+//        popover!.sourceRect = CGRectMake(100,100,0,0)
         
 //        self.view.addSubview(popoverContent.view)
 //        popoverContent.didMoveToParentViewController(self)
-        self.presentViewController(popoverContent, animated: true, completion: nil)
+//        self.presentViewController(popoverContent, animated: true, completion: nil)
         
       
         
@@ -118,86 +127,96 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate, UIPopoverPres
         
     }
     
+    func displayViewController(animationType: SLpopupViewAnimationType) {
+        let myPopupViewController:MyPopupViewController = MyPopupViewController(nibName:"MyPopupViewController", bundle: nil)
+//        myPopupViewController.delegate = self
+        self.presentpopupViewController(myPopupViewController, animationType: animationType, completion: { () -> Void in
+        
+        })
+    }
+    
     @IBAction func categoryTypeButtonAction(sender: AnyObject)
     {
+        
+//        self.displayViewController(.BottomTop)
+    
        
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("popOver") as! UIViewController
-        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
-        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
-//        popover.barButtonItem = sender as! UIBarButtonItem
-        presentViewController(vc, animated: true, completion:nil)
+//        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewControllerWithIdentifier("popOver") 
+//        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
+//        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
+////        popover.barButtonItem = sender as! UIBarButtonItem
+//        presentViewController(vc, animated: true, completion:nil)
         
         
-//        let alertController = UIAlertController()
+        let alertController = UIAlertController()
+        let actionTitle = UIAlertAction(title:"Select Account Type", style: .Default) { (action) -> Void in
+            self.categoryNameTextField.hidden = true
+            self.categoryTypeBtn.setTitle("   Individual", forState: .Normal)
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
+            
+        }
+        
+        // Initialize Actions
+        let action = UIAlertAction(title: categoryType[0] as String, style:.Default) { (action) -> Void in
+    
+            self.categoryNameTextField.hidden = true
+            self.categoryTypeBtn.setTitle("   Individual", forState: .Normal)
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
+           
+            
+        }
+        
+        let action1 = UIAlertAction(title: categoryType[1] as String, style: .Default) { (action) -> Void in
+            self.categoryNameTextField.hidden = false
+            self.categoryTypeBtn.setTitle("   Employee", forState: .Normal)
+            self.categoryNameTextField.placeholder = "Company Name"
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+        }
+        let action2 = UIAlertAction(title: categoryType[2] as String, style: .Default) { (action) -> Void in
+            self.categoryNameTextField.hidden = false
+            self.categoryTypeBtn.setTitle("   Company", forState: .Normal)
+            self.categoryNameTextField.placeholder = "Company Name"
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+        }
+        let action3 = UIAlertAction(title: categoryType[3] as String, style: .Default) { (action) -> Void in
+            self.categoryNameTextField.hidden = false
+            self.categoryTypeBtn.setTitle("   Non-Profit Organisation", forState: .Normal)
+            self.categoryNameTextField.placeholder = "Non-Profit Organisation"
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+        }
+        let action4 = UIAlertAction(title: categoryType[4] as String, style: .Default) { (action) -> Void in
+            self.categoryTypeBtn.setTitle("   Non-Profit Organisation Employee", forState: .Normal)
+            self.categoryNameTextField.placeholder = "Non-Profit Organisation Employee"
+            self.categoryNameTextField.hidden = false
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+        }
+        // Add Actions
+        let image = UIImage(named: "icon_password.png")
+        action.setValue(image, forKey: "image")
+        
+        alertController.addAction(actionTitle)
+        alertController.addAction(action)
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.addAction(action3)
+        alertController.addAction(action4)
+        
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.alignment = NSTextAlignment.Left
 //        
-//        let actionTitle = UIAlertAction(title:"Select Account Type", style: .Default) { (action) -> Void in
-//            self.categoryNameTextField.hidden = true
-//            self.categoryTypeBtn.setTitle("   Individual", forState: .Normal)
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
-//            
-//        }
+//        let messageText = NSMutableAttributedString(
+//            string: kTermsAndConditions,
+//            attributes: [
+//                NSParagraphStyleAttributeName: paragraphStyle,
+//                NSFontAttributeName: UIFont.systemFontOfSize(13.0)
+//            ]
+////        )
 //        
-//        // Initialize Actions
-//        let action = UIAlertAction(title: categoryType[0] as String, style:.Default) { (action) -> Void in
-//            
-//            self.categoryNameTextField.hidden = true
-//            self.categoryTypeBtn.setTitle("   Individual", forState: .Normal)
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
-//           
-//            
-//        }
-//        
-//        let action1 = UIAlertAction(title: categoryType[1] as String, style: .Default) { (action) -> Void in
-//            self.categoryNameTextField.hidden = false
-//            self.categoryTypeBtn.setTitle("   Employee", forState: .Normal)
-//            self.categoryNameTextField.placeholder = "Company Name"
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-//        }
-//        let action2 = UIAlertAction(title: categoryType[2] as String, style: .Default) { (action) -> Void in
-//            self.categoryNameTextField.hidden = false
-//            self.categoryTypeBtn.setTitle("   Company", forState: .Normal)
-//            self.categoryNameTextField.placeholder = "Company Name"
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-//        }
-//        let action3 = UIAlertAction(title: categoryType[3] as String, style: .Default) { (action) -> Void in
-//            self.categoryNameTextField.hidden = false
-//            self.categoryTypeBtn.setTitle("   Non-Profit Organisation", forState: .Normal)
-//            self.categoryNameTextField.placeholder = "Non-Profit Organisation"
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-//        }
-//        let action4 = UIAlertAction(title: categoryType[4] as String, style: .Default) { (action) -> Void in
-//            self.categoryTypeBtn.setTitle("   Non-Profit Organisation Employee", forState: .Normal)
-//            self.categoryNameTextField.placeholder = "Non-Profit Organisation Employee"
-//            self.categoryNameTextField.hidden = false
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-//        }
-//        // Add Actions
-//        let image = UIImage(named: "icon_password.png")
-//        action.setValue(image, forKey: "image")
-//        
-//        alertController.addAction(actionTitle)
-//        alertController.addAction(action)
-//        alertController.addAction(action1)
-//        alertController.addAction(action2)
-//        alertController.addAction(action3)
-//        alertController.addAction(action4)
-//        
-////        let paragraphStyle = NSMutableParagraphStyle()
-////        paragraphStyle.alignment = NSTextAlignment.Left
-////        
-////        let messageText = NSMutableAttributedString(
-////            string: kTermsAndConditions,
-////            attributes: [
-////                NSParagraphStyleAttributeName: paragraphStyle,
-////                NSFontAttributeName: UIFont.systemFontOfSize(13.0)
-////            ]
-//////        )
-////        
-////        alertController.setValue(messageText, forKey: "attributedMessage")
-//        alertController.view.backgroundColor = UIColor.blueColor()
-//        // Present Alert Controller
-//        self.presentViewController(alertController, animated: true, completion: nil)
+//        alertController.setValue(messageText, forKey: "attributedMessage")
+        alertController.view.backgroundColor = UIColor.blueColor()
+        // Present Alert Controller
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
 

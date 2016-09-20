@@ -1,5 +1,5 @@
 //
-//  PopOverViewController.swift
+//  SelectAccountAlertViewController.swift
 //  payableApp
 //
 //  Created by apple on 20/09/16.
@@ -8,20 +8,11 @@
 
 import UIKit
 
-class PopOverViewController: UIViewController,UIPopoverPresentationControllerDelegate {
+class SelectAccountAlertViewController: UIViewController {
 
-    @IBOutlet weak var generateQRView: UIView!
-    @IBOutlet weak var bitCoinView: UIView!
-    @IBOutlet weak var scanCardView: UIView!
-    @IBOutlet weak var sendInvoice: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        
-//       self.navigationController?.navigationItem.title = "$ Charge Option"
-//        
-//        self.navigationController!.navigationBar.barTintColor = UIColor.blueColor()
-        
-        
+
         // Do any additional setup after loading the view.
     }
 
