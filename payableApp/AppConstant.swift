@@ -12,6 +12,7 @@ struct Appconstant
 {
     static let WEB_API="https://cppstaging.azurewebsites.net/api";
     static let SIGN_UP="/StripeConnectSignup"
+    static var btnName = "Select Category"
 }
 
 

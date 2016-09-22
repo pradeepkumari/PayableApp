@@ -106,6 +106,9 @@ class AccountInfoViewController: UIViewController {
         
     }
     
+    @IBAction func homeBtnAction(sender: AnyObject) {
+        self.performSegueWithIdentifier("goto_Homepage", sender: self)
+    }
     
     func makeBlurImage(targetImageView:UIImageView?)
     {

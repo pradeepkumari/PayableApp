@@ -16,7 +16,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var taxAndTipsView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.businessLogoView.hidden = false
+        self.taxAndTipsView.hidden = true
         // Do any additional setup after loading the view.
     }
     

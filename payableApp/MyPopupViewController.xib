@@ -38,6 +38,9 @@
                     <inset key="titleEdgeInsets" minX="-53" minY="71" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="26" minY="-16" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="Scan Card" image="ic_scancard.png"/>
+                    <connections>
+                        <action selector="scanCardBtn:" destination="-1" eventType="touchUpInside" id="bUv-27-5TT"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3B-oC-5IT">
                     <rect key="frame" x="160" y="60" width="120" height="100"/>
@@ -45,6 +48,9 @@
                     <inset key="titleEdgeInsets" minX="-53" minY="71" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="24" minY="-17" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="BitCoin" image="ic_bitcoin.png"/>
+                    <connections>
+                        <action selector="bitCoinBtn:" destination="-1" eventType="touchUpInside" id="Ut2-s8-xoF"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVe-Xh-5zr">
                     <rect key="frame" x="160" y="180" width="120" height="100"/>
@@ -52,6 +58,9 @@
                     <inset key="titleEdgeInsets" minX="-53" minY="71" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="29" minY="-16" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="Send Invoice" image="ic_sendinvoice.png"/>
+                    <connections>
+                        <action selector="sendInvoiceBtn:" destination="-1" eventType="touchUpInside" id="DX9-6K-fl4"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dX-cv-Vyf">
                     <rect key="frame" x="20" y="180" width="120" height="100"/>
@@ -59,6 +68,9 @@
                     <inset key="titleEdgeInsets" minX="-53" minY="71" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="23" minY="-16" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="Generate QR" image="ic_qr.png"/>
+                    <connections>
+                        <action selector="generateQR:" destination="-1" eventType="touchUpInside" id="mnC-Yk-8sa"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

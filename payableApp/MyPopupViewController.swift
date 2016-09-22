@@ -19,6 +19,19 @@ class MyPopupViewController: UIViewController {
         self.dismissPopupViewController(.TopBottom)
     }
     
+    @IBAction func scanCardBtn(sender: AnyObject) {
+        print("Scan Card Tapped")
+    }
+    @IBAction func bitCoinBtn(sender: AnyObject) {
+        print("BitCoin Tapped")
+    }
+ 
+    @IBAction func generateQR(sender: AnyObject) {
+        print("generateQR Tapped")
+    }
+    @IBAction func sendInvoiceBtn(sender: AnyObject) {
+        print("sendInvoice Tapped")
+    }
     @IBAction func btnCancel(sender:UIButton) {
         self.delegate?.pressCancel(self)
     }

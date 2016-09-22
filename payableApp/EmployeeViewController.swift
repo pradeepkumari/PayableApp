@@ -1,27 +1,21 @@
 //
-//  HistoryViewController.swift
+//  EmployeeViewController.swift
 //  payableApp
 //
-//  Created by apple on 19/09/16.
+//  Created by apple on 21/09/16.
 //  Copyright © 2016 apple. All rights reserved.
 //
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+class EmployeeViewController: UIViewController {
+   
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var TotalTransLabel1: UILabel!
-    @IBOutlet weak var totalTransLabel2: UILabel!
-    @IBOutlet weak var TransactionCountTextfield: UITextField!
-    @IBOutlet weak var transactionAmountTextfield: UITextField!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.segmentControl.tintColor = UIColor.whiteColor()
-//        self.segmentControl.layer.cornerRadius = 50.0
-//        
-//        segmentControl.subviews[1].backgroundColor = UIColor.whiteColor()
+
         // Do any additional setup after loading the view.
     }
 
@@ -30,26 +24,20 @@ class HistoryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func homeButtonAction(sender: AnyObject) {
+    @IBAction func homeBtnAction(sender: AnyObject) {
         self.performSegueWithIdentifier("goto_Homepage", sender: self)
     }
-
-    @IBAction func indexBtn(sender: AnyObject) {
-    }
-    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let acell = tableView.dequeueReusableCellWithIdentifier("historyCell", forIndexPath: indexPath) as UITableViewCell!
-        
-        let accountImage = acell.viewWithTag(3) as! UIImageView
-        let productimages =  UIImage(named: "ic_home.png")
-        accountImage.image = productimages
+        let acell = tableView.dequeueReusableCellWithIdentifier("employeeCell", forIndexPath: indexPath) as UITableViewCell!
+        if indexPath.row == 0
+        {
+            acell.viewWithTag(10)?.hidden = true
+        }
         
         let label = acell.viewWithTag(1) as! UILabel
+//        acell.viewWithTag(1) = "check val"
         label.text = "hfu"
-        let dateTimelabel = acell.viewWithTag(2) as! UILabel
-        dateTimelabel.text = "hfu"
-        
         return acell
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,7 +51,7 @@ class HistoryViewController: UIViewController {
         
         
     }
-    
+
     /*
     // MARK: - Navigation
 

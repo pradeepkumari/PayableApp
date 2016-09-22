@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="selectAccountCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectAccountCell" id="KGk-i7-Jjw" customClass="SelectAccountTableViewCell" customModule="payableApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="310" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hfT-0B-scc">
+                        <rect key="frame" x="8" y="16" width="40" height="33"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="LPh-cN-2RA"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="XXl-FC-jIQ"/>
+                            <constraint firstAttribute="width" constant="40" id="eQG-dF-cbz"/>
+                            <constraint firstAttribute="height" constant="33" id="kIv-WT-DRS"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="l5J-Xv-dCG"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBG-Ig-J5H">
+                        <rect key="frame" x="60" y="18" width="242" height="30"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                        </accessibility>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.32549019607843138" green="0.63137254901960782" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="dBG-Ig-J5H" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5cy-Lh-LbV"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="hfT-0B-scc" secondAttribute="leading" id="7a5-sW-dpl"/>
+                    <constraint firstItem="hfT-0B-scc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Nrn-xR-NP5"/>
+                    <constraint firstItem="dBG-Ig-J5H" firstAttribute="leading" secondItem="hfT-0B-scc" secondAttribute="trailing" constant="12" id="QN6-gp-mZt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
+            </accessibility>
+            <point key="canvasLocation" x="250" y="232.5"/>
+        </tableViewCell>
+    </objects>
+</document>
