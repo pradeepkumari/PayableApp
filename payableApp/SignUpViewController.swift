@@ -26,6 +26,17 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
     var screenSize:CGRect!
     var screenWidth:CGFloat!
     var screenHeight:CGFloat!
+    
+    
+    var isCompany=false
+    var isIndividual=false
+    var isEmployee=false
+    var isNonprofit=false
+    var isNonprofitEmployee=false
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,11 +44,11 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(animated: Bool) {
-        self.createBottomLineTextField(userNameTextField)
-        self.createBottomLineTextField(emailTextField)
-        self.createBottomLineTextField(passwordTextField)
-        self.createBottomLineTextField(confirmPwdTextField)
-        self.createBottomLineTextField(phoneTextField)
+//        self.createBottomLineTextField(userNameTextField)
+//        self.createBottomLineTextField(emailTextField)
+//        self.createBottomLineTextField(passwordTextField)
+//        self.createBottomLineTextField(confirmPwdTextField)
+//        self.createBottomLineTextField(phoneTextField)
         
         
         
@@ -246,10 +257,7 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
             else if(selectAccountTypeButton.titleLabel?.text == "   Select Account Type") {
                 self.presentViewController(Alert().alert("Warning", message: "Choose your Account Type"),animated: true,completion: nil)
         }
-//            else
-//            {
-//                
-//            }
+          
 
             else {
                 
@@ -282,6 +290,7 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                         }
                         else
                         {
+                            
                             let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Stripe",IsCompany: false,IsEmployee : false, IsIndividual : true, ISCharity : false, IsCharityEmployee: false, UserDeviceID : "", stripeCode : "")!
                             let serializedjson  = JSONSerializer.toJson(signupViewmodel)
                             print(serializedjson)
@@ -295,7 +304,53 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                     }
                     else
                     {
-                        let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Stripe",IsCompany: false,IsEmployee : false, IsIndividual : true, ISCharity : false, IsCharityEmployee: false, UserDeviceID : "", stripeCode : "")!
+                        if categoryTypeBtn.titleLabel?.text == "   Individual"
+                        {
+                            //Individual
+                            isCompany=false;
+                            isIndividual=true;
+                            isEmployee=false;
+                            isNonprofit=false;
+                            isNonprofitEmployee=false;
+                            
+                        }
+                        else if categoryTypeBtn.titleLabel?.text == "   Company"
+                        {
+                            isCompany=true;
+                            isIndividual=false;
+                            isEmployee=false;
+                            isNonprofit=false;
+                            isNonprofitEmployee=false;
+                            
+                        }
+                        else if categoryTypeBtn.titleLabel?.text == "   Employee"
+                        {
+                            isCompany=false;
+                            isIndividual=false;
+                            isEmployee=true;
+                            isNonprofit=false;
+                            isNonprofitEmployee=false;
+                            
+                        }
+                        else if categoryTypeBtn.titleLabel?.text == "   Non-Profit Organization"
+                        {
+                            isCompany=false;
+                            isIndividual=false;
+                            isEmployee=false;
+                            isNonprofit=true;
+                            isNonprofitEmployee=false;
+                            
+                        }
+                        else if categoryTypeBtn.titleLabel?.text == "   Non-Profit Organization Employee"
+                        {
+                            isCompany=false;
+                            isIndividual=false;
+                            isEmployee=false;
+                            isNonprofit=false;
+                            isNonprofitEmployee=true;
+                        }
+
+                        let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Bank",IsCompany: isCompany,IsEmployee : isEmployee, IsIndividual : isIndividual, ISCharity : isNonprofit, IsCharityEmployee: isNonprofitEmployee, UserDeviceID : "", stripeCode : "")!
                         let serializedjson  = JSONSerializer.toJson(signupViewmodel)
                         print(serializedjson)
                         
@@ -310,6 +365,12 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
             }
         
     }
+    
+    
+    
+    
+    
+    
     
     
    /* func sendrequesttoserver(url : String,value : String)

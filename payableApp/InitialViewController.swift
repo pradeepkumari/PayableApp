@@ -17,6 +17,8 @@ class InitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "SplashScreen.png")!)
+        
         logoimg.hidden = true
         a = 1.0
         
@@ -31,7 +33,7 @@ class InitialViewController: UIViewController {
     func addLogo() {
      
         
-        let img = UIImageView(image: UIImage(named: "Screen Shot 2016-09-13 at 2.14.25 PM.png"))
+        let img = UIImageView(image: UIImage(named: "Splashlogo.png"))
 
         img.frame = CGRectMake( self.view.frame.size.width/2 - (50 + a/2) , 145 , 100 + a, 100 + a )
         a += 0.5
