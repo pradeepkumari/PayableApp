@@ -426,7 +426,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="Goa-4d-VfC"/>
                                                 </constraints>
-                                                <state key="normal" title="     Select Account Type">
+                                                <state key="normal" title="Select Account Type">
                                                     <color key="titleColor" red="0.94509803920000002" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -445,7 +445,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="AQ9-ow-JaV"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="luw-5u-bup"/>
                                                 </constraints>
-                                                <state key="normal" title="     Select Account Type">
+                                                <state key="normal" title="Select Account Type">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -1503,11 +1503,11 @@
                         <viewControllerLayoutGuide type="bottom" id="JV9-7g-bun"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eyV-bd-Yep">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yNE-Gt-kk7">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="254-7C-XXz">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -1619,7 +1619,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gjs-qL-P0f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5QQ-g8-0wt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o9V-1t-dKT">
@@ -1841,6 +1841,6 @@
         <image name="user.png" width="57" height="67"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XNi-Cu-k6a"/>
+        <segue reference="RNq-qq-tEI"/>
     </inferredMetricsTieBreakers>
 </document>

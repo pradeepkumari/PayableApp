@@ -22,6 +22,8 @@
 		18B067611D92CEEC00D6823E /* MerchantBitcoin_CheckBitcoinPaid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B067601D92CEEC00D6823E /* MerchantBitcoin_CheckBitcoinPaid.swift */; };
 		18B067631D92CFBC00D6823E /* MerchantChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B067621D92CFBB00D6823E /* MerchantChangePassword.swift */; };
 		18B067651D92D0A900D6823E /* MerchantBitcoin_CreateStripeBitcoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B067641D92D0A900D6823E /* MerchantBitcoin_CreateStripeBitcoinRequest.swift */; };
+		18B5544C1D95168200F206AC /* Idmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5544B1D95168200F206AC /* Idmodel.swift */; };
+		18B5544F1D956E4100F206AC /* Signupviewcharitymodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5544E1D956E4100F206AC /* Signupviewcharitymodel.swift */; };
 		18C536151D8960A700116795 /* PayableHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C536141D8960A700116795 /* PayableHomePageViewController.swift */; };
 		18C536241D89662100116795 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C536181D89662100116795 /* DBHelper.swift */; };
 		18C536251D89662100116795 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5361A1D89662100116795 /* FMDatabase.m */; };
@@ -127,6 +129,8 @@
 		18B067601D92CEEC00D6823E /* MerchantBitcoin_CheckBitcoinPaid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantBitcoin_CheckBitcoinPaid.swift; sourceTree = "<group>"; };
 		18B067621D92CFBB00D6823E /* MerchantChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantChangePassword.swift; sourceTree = "<group>"; };
 		18B067641D92D0A900D6823E /* MerchantBitcoin_CreateStripeBitcoinRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantBitcoin_CreateStripeBitcoinRequest.swift; sourceTree = "<group>"; };
+		18B5544B1D95168200F206AC /* Idmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idmodel.swift; sourceTree = "<group>"; };
+		18B5544E1D956E4100F206AC /* Signupviewcharitymodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signupviewcharitymodel.swift; sourceTree = "<group>"; };
 		18C536141D8960A700116795 /* PayableHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayableHomePageViewController.swift; sourceTree = "<group>"; };
 		18C536171D89662000116795 /* payableApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "payableApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		18C536181D89662100116795 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBHelper.swift; path = ../WalletPayable/DBHelper.swift; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 			isa = PBXGroup;
 			children = (
 				18C536341D8966E200116795 /* Signupviewmodel.swift */,
+				18B5544E1D956E4100F206AC /* Signupviewcharitymodel.swift */,
+				18B5544B1D95168200F206AC /* Idmodel.swift */,
 				18B0675C1D92CDF100D6823E /* MerchantBitcoin_UpdateBitcoinStatus.swift */,
 				18B0675E1D92CE7C00D6823E /* MerchantBitcoinTransactionHistoryModel.swift */,
 				18B067601D92CEEC00D6823E /* MerchantBitcoin_CheckBitcoinPaid.swift */,
@@ -579,6 +585,7 @@
 				18B067561D92999200D6823E /* SelectAccountTableViewCell.swift in Sources */,
 				18C536241D89662100116795 /* DBHelper.swift in Sources */,
 				18C536381D8966E200116795 /* Signupviewmodel.swift in Sources */,
+				18B5544F1D956E4100F206AC /* Signupviewcharitymodel.swift in Sources */,
 				18E8BA791D8C4F0100B5F56A /* SettingsViewController.swift in Sources */,
 				18B067651D92D0A900D6823E /* MerchantBitcoin_CreateStripeBitcoinRequest.swift in Sources */,
 				18C669431D87F296000F8BBA /* AppDelegate.swift in Sources */,
@@ -605,6 +612,7 @@
 				18C536261D89662100116795 /* FMDatabaseAdditions.m in Sources */,
 				18AB49151D8ABEC100B273C9 /* AccountInfoViewController.swift in Sources */,
 				18D6F2101D91598E00B9D985 /* UIVViewController-SLPopup.swift in Sources */,
+				18B5544C1D95168200F206AC /* Idmodel.swift in Sources */,
 				18C536431D89674400116795 /* Alert.swift in Sources */,
 				18B067611D92CEEC00D6823E /* MerchantBitcoin_CheckBitcoinPaid.swift in Sources */,
 				18C536391D8966E200116795 /* SwiftyJson.swift in Sources */,

@@ -34,8 +34,12 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
     var isNonprofit=false
     var isNonprofitEmployee=false
     
-    
-    
+    var companyNameModeArray:NSMutableArray!
+    var ID:String = ""
+    var finalId: String!
+    var finalCharityId: String!
+    var companyId: String!
+    var companyCharityId: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +52,12 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
 //        self.createBottomLineTextField(emailTextField)
 //        self.createBottomLineTextField(passwordTextField)
 //        self.createBottomLineTextField(confirmPwdTextField)
-//        self.createBottomLineTextField(phoneTextField)
+////        self.createBottomLineTextField(phoneTextField)
+//        let idmodel = Idmodel.init(ID:self.ID)
+//        let serializedjson  = JSONSerializer.toJson(idmodel)
+//        getCompanyListFromServer(Appconstant.WEB_API+Appconstant.getCompanyList, value: serializedjson)
         
-        
+//        let response :String = [{"UserId":8278,"CompanyName":"Vertace Consultants"},{"UserId":8282,"CompanyName":"vertaceandroidcompany"},{"UserId":9290,"CompanyName":"Vertace iOS company "},{"UserId":9291,"CompanyName":"Vertace IOS Devleopment"},{"UserId":9294,"CompanyName":"BMG T Corp"}]
         
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         
@@ -164,74 +171,60 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
 //        presentViewController(vc, animated: true, completion:nil)
         
         
-//        let alertController = UIAlertController()
-//        let actionTitle = UIAlertAction(title:"Select Account Type", style: .Default) { (action) -> Void in
-//            self.categoryNameTextField.hidden = true
-//            self.categoryTypeBtn.setTitle("   Individual", forState: .Normal)
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
-//            
-//        }
-//        
-//        // Initialize Actions
-//        let action = UIAlertAction(title: categoryType[0] as String, style:.Default) { (action) -> Void in
-//    
-//            self.categoryNameTextField.hidden = true
-//            self.categoryTypeBtn.setTitle("   Individual", forState: .Normal)
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
-//           
-//            
-//        }
-//        
-//        let action1 = UIAlertAction(title: categoryType[1] as String, style: .Default) { (action) -> Void in
-//            self.categoryNameTextField.hidden = false
-//            self.categoryTypeBtn.setTitle("   Employee", forState: .Normal)
-//            self.categoryNameTextField.placeholder = "Company Name"
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-//        }
-//        let action2 = UIAlertAction(title: categoryType[2] as String, style: .Default) { (action) -> Void in
-//            self.categoryNameTextField.hidden = false
-//            self.categoryTypeBtn.setTitle("   Company", forState: .Normal)
-//            self.categoryNameTextField.placeholder = "Company Name"
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-//        }
-//        let action3 = UIAlertAction(title: categoryType[3] as String, style: .Default) { (action) -> Void in
-//            self.categoryNameTextField.hidden = false
-//            self.categoryTypeBtn.setTitle("   Non-Profit Organisation", forState: .Normal)
-//            self.categoryNameTextField.placeholder = "Non-Profit Organisation"
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-//        }
-//        let action4 = UIAlertAction(title: categoryType[4] as String, style: .Default) { (action) -> Void in
-//            self.categoryTypeBtn.setTitle("   Non-Profit Organisation Employee", forState: .Normal)
-//            self.categoryNameTextField.placeholder = "Non-Profit Organisation Employee"
-//            self.categoryNameTextField.hidden = false
-//            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
-//        }
-//        // Add Actions
-//        let image = UIImage(named: "icon_password.png")
-//        action.setValue(image, forKey: "image")
-//        
-//        alertController.addAction(actionTitle)
-//        alertController.addAction(action)
-//        alertController.addAction(action1)
-//        alertController.addAction(action2)
-//        alertController.addAction(action3)
-//        alertController.addAction(action4)
-//        
-////        let paragraphStyle = NSMutableParagraphStyle()
-////        paragraphStyle.alignment = NSTextAlignment.Left
-////        
-////        let messageText = NSMutableAttributedString(
-////            string: kTermsAndConditions,
-////            attributes: [
-////                NSParagraphStyleAttributeName: paragraphStyle,
-////                NSFontAttributeName: UIFont.systemFontOfSize(13.0)
-////            ]
-//////        )
-////        
-////        alertController.setValue(messageText, forKey: "attributedMessage")
-//        alertController.view.backgroundColor = UIColor.blueColor()
-//        // Present Alert Controller
-//        self.presentViewController(alertController, animated: true, completion: nil)
+        let alertController = UIAlertController()
+        let actionTitle = UIAlertAction(title:"Select Account Type", style: .Default) { (action) -> Void in
+            self.categoryNameTextField.hidden = true
+            self.categoryTypeBtn.setTitle("Select Account Type", forState: .Normal)
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
+            
+        }
+        
+        // Initialize Actions
+        let action = UIAlertAction(title: categoryType[0] as String, style:.Default) { (action) -> Void in
+    
+            self.categoryNameTextField.hidden = true
+            self.categoryTypeBtn.setTitle("Individual", forState: .Normal)
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+80
+           
+            
+        }
+        
+        let action1 = UIAlertAction(title: categoryType[1] as String, style: .Default) { (action) -> Void in
+            self.categoryNameTextField.hidden = false
+            self.categoryTypeBtn.setTitle("Employee", forState: .Normal)
+            self.categoryNameTextField.placeholder = "Company Name"
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+        }
+        let action2 = UIAlertAction(title: categoryType[2] as String, style: .Default) { (action) -> Void in
+            self.categoryNameTextField.hidden = false
+            self.categoryTypeBtn.setTitle("Company", forState: .Normal)
+            self.categoryNameTextField.placeholder = "Company Name"
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+        }
+        let action3 = UIAlertAction(title: categoryType[3] as String, style: .Default) { (action) -> Void in
+            self.categoryNameTextField.hidden = false
+            self.categoryTypeBtn.setTitle("Non-Profit Organisation", forState: .Normal)
+            self.categoryNameTextField.placeholder = "Non-Profit Organisation"
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+        }
+        let action4 = UIAlertAction(title: categoryType[4] as String, style: .Default) { (action) -> Void in
+            self.categoryTypeBtn.setTitle("Non-Profit Organisation Employee", forState: .Normal)
+            self.categoryNameTextField.placeholder = "Non-Profit Organisation Employee"
+            self.categoryNameTextField.hidden = false
+            self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
+        }
+        // Add Actions
+        let image = UIImage(named: "icon_password.png")
+        action.setValue(image, forKey: "image")
+        
+        alertController.addAction(actionTitle)
+        alertController.addAction(action)
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.addAction(action3)
+        alertController.addAction(action4)
+
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
 
@@ -254,7 +247,7 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
             else if(password != confirmpassword) {
                 self.presentViewController(Alert().alert("Warning", message: "Enter correct password"),animated: true,completion: nil)
             }
-            else if(selectAccountTypeButton.titleLabel?.text == "   Select Account Type") {
+            else if(selectAccountTypeButton.titleLabel?.text == "Select Account Type") {
                 self.presentViewController(Alert().alert("Warning", message: "Choose your Account Type"),animated: true,completion: nil)
         }
           
@@ -263,12 +256,7 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                 
                 if (sumUpCheck == true)
                 {
-                //init?( Username : String, Password : String, ConfirmPassword : String, email : String, PhoneNumber : String, CPPAccountType: String,IsCompany:Bool,IsEmployee : Bool, IsIndividual : Bool, ISCharity : Bool, IsCharityEmployee: Bool, UserDeviceID : String, stripeCode : String)
-                
-                let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Stripe",IsCompany: false,IsEmployee : false, IsIndividual : false, ISCharity : false, IsCharityEmployee: false, UserDeviceID : "", stripeCode : "")!
-                let serializedjson  = JSONSerializer.toJson(signupViewmodel)
-                print(serializedjson)
-                    
+              
                     self.performSegueWithIdentifier("goto_Homepage", sender: self)
                     let homeVc:PayableHomePageViewController = PayableHomePageViewController ()
                     self.presentViewController(homeVc, animated: true, completion: nil)
@@ -277,11 +265,11 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                 
                 else
                 {
-                    if categoryTypeBtn.titleLabel?.text == "   Select Account Type"
+                    if categoryTypeBtn.titleLabel?.text == "Select Account Type"
                     {
                         self.presentViewController(Alert().alert("Warning", message: "Choose your Category Type"),animated: true,completion: nil)
                     }
-                    else if categoryTypeBtn.titleLabel?.text != "   Individual"
+                    else if categoryTypeBtn.titleLabel?.text != "Individual"
                     {
                         if (self.categoryNameTextField.text == "")
                             
@@ -290,71 +278,144 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                         }
                         else
                         {
+                            print((categoryTypeBtn.titleLabel?.text)!)
                             
-                            let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Stripe",IsCompany: false,IsEmployee : false, IsIndividual : true, ISCharity : false, IsCharityEmployee: false, UserDeviceID : "", stripeCode : "")!
-                            let serializedjson  = JSONSerializer.toJson(signupViewmodel)
-                            print(serializedjson)
+                            if (categoryTypeBtn.titleLabel?.text)!  == "Company"
+                            {
+                                isCompany=true;
+                                isIndividual=false;
+                                isEmployee=false;
+                                isNonprofit=false;
+                                isNonprofitEmployee=false;
+                                
+                                
+                                
+                            }
+                            else if (categoryTypeBtn.titleLabel?.text)!  == "Employee"
+                            {
+                                let idmodel = Idmodel.init(ID:self.ID)!
+                                let serializedjson  = JSONSerializer.toJson(idmodel)
+                                print(serializedjson)
+                                
+                                let request = NSMutableURLRequest(URL: NSURL(string: Appconstant.WEB_API+Appconstant.getCompanyList)!)
+                                request.HTTPMethod = "Post"
+                                print(serializedjson)
+                                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                                
+                                request.HTTPBody = serializedjson.dataUsingEncoding(NSUTF8StringEncoding)
+                                
+                                let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
+                                    { data, response, error in
+                                        guard error == nil && data != nil else {                                                          // check for fundamental networking error
+                                            
+                                            return
+                                        }
+                                        
+                                        if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                                            print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                                            print("response = \(response)")
+                                        }
+                                        
+                                        let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                                        print("responseString = \(responseString)")
+                                        
+                                        let json = JSON(data: data!)
+                                        for item in json.arrayValue
+                                        {
+                                            let compName = item["CompanyName"].stringValue
+                                            let btnTitle = (self.categoryNameTextField.text)!
+                                            print(compName)
+                                            print(btnTitle)
+                                            if compName.isEqual(btnTitle)
+                                            {
+                                               print("not equal")
+                                            }
+                                            else
+                                            {
+                                                self.finalId = item["UserId"].stringValue
+                                            }
+                                            
+                                        }
+                                        
+                                        
+                                        
+                                
+                                
+                                
+                                
+                                self.isCompany=false;
+                                self.isIndividual=false;
+                                self.isEmployee=true;
+                                self.isNonprofit=false;
+                                self.isNonprofitEmployee=false;
+                                
+                                
+                                self.companyId = self.finalId
+                                let signupViewmodel = Signupviewmodel.init( Username : self.userNameTextField.text!, Password : self.passwordTextField.text!, Email : self.emailTextField.text!, PhoneNumber :  self.phoneTextField.text!,CompanyID:self.finalId,UserDeviceID: "")
+                                let serializedjson1 = JSONSerializer.toJson(signupViewmodel)
+                                print(serializedjson1)
+                                }
+                                task.resume()
+                                
+                            }
+                            else if (categoryTypeBtn.titleLabel?.text)!  == "Non-Profit Organisation"
+                            {
+                                isCompany=false;
+                                isIndividual=false;
+                                isEmployee=false;
+                                isNonprofit=true;
+                                isNonprofitEmployee=false;
+                                
+                                
+                                
+                            }
+                            else if (categoryTypeBtn.titleLabel?.text)! == "Non-Profit Organisation Employee"
+                            {
+                                isCompany=false;
+                                isIndividual=false;
+                                isEmployee=false;
+                                isNonprofit=false;
+                                isNonprofitEmployee=true;
+                                
+                                let idmodel = Idmodel.init(ID:self.ID)
+                                let serializedjson  = JSONSerializer.toJson(idmodel)
+                                print(serializedjson)
+                                self.getCharityListFromServer(Appconstant.WEB_API+Appconstant.getCharityNameList, value: serializedjson)
+                                companyCharityId = self.finalCharityId
+                                
+                               
+                                let signupviewcharitymodel = Signupviewcharitymodel.init( Username : self.userNameTextField.text!, Password : self.passwordTextField.text!, Email : self.emailTextField.text!, PhoneNumber :  self.phoneTextField.text!,CharityCompanyID:companyCharityId,UserDeviceID: "")
+                                let serializedjson2 = JSONSerializer.toJson(signupviewcharitymodel)
+                                print(serializedjson2)
+                            }
+
+                            
+                            
+                            
+                            
+                            
+//                            let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Stripe",IsCompany: false,IsEmployee : false, IsIndividual : true, ISCharity : false, IsCharityEmployee: false, UserDeviceID : "", stripeCode : "")!
+//                            let serializedjson  = JSONSerializer.toJson(signupViewmodel)
+//                            print(serializedjson)
                             
                             self.performSegueWithIdentifier("goto_Stripe", sender: self)
-//                            let stripeVc = StripeSigninViewController()
-//                            self.presentViewController(stripeVc, animated: true, completion: nil)
+
                             
                         }
                         
                     }
                     else
                     {
-                        if categoryTypeBtn.titleLabel?.text == "   Individual"
-                        {
-                            //Individual
-                            isCompany=false;
-                            isIndividual=true;
-                            isEmployee=false;
-                            isNonprofit=false;
-                            isNonprofitEmployee=false;
-                            
-                        }
-                        else if categoryTypeBtn.titleLabel?.text == "   Company"
-                        {
-                            isCompany=true;
-                            isIndividual=false;
-                            isEmployee=false;
-                            isNonprofit=false;
-                            isNonprofitEmployee=false;
-                            
-                        }
-                        else if categoryTypeBtn.titleLabel?.text == "   Employee"
-                        {
-                            isCompany=false;
-                            isIndividual=false;
-                            isEmployee=true;
-                            isNonprofit=false;
-                            isNonprofitEmployee=false;
-                            
-                        }
-                        else if categoryTypeBtn.titleLabel?.text == "   Non-Profit Organization"
-                        {
-                            isCompany=false;
-                            isIndividual=false;
-                            isEmployee=false;
-                            isNonprofit=true;
-                            isNonprofitEmployee=false;
-                            
-                        }
-                        else if categoryTypeBtn.titleLabel?.text == "   Non-Profit Organization Employee"
-                        {
-                            isCompany=false;
-                            isIndividual=false;
-                            isEmployee=false;
-                            isNonprofit=false;
-                            isNonprofitEmployee=true;
-                        }
-
-                        let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Bank",IsCompany: isCompany,IsEmployee : isEmployee, IsIndividual : isIndividual, ISCharity : isNonprofit, IsCharityEmployee: isNonprofitEmployee, UserDeviceID : "", stripeCode : "")!
-                        let serializedjson  = JSONSerializer.toJson(signupViewmodel)
-                        print(serializedjson)
-                        
                         self.performSegueWithIdentifier("goto_Stripe", sender: self)
+
+                        
+//                        let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Bank",IsCompany: isCompany,IsEmployee : isEmployee, IsIndividual : isIndividual, ISCharity : isNonprofit, IsCharityEmployee: isNonprofitEmployee, UserDeviceID : "", stripeCode : "")!
+                        
+//                        let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Bank",IsCompany: isCompany,IsEmployee : isEmployee, IsIndividual : isIndividual, ISCharity : isNonprofit, IsCharityEmployee: isNonprofitEmployee, UserDeviceID : "", stripeCode : "")!
+//                        let serializedjson  = JSONSerializer.toJson(signupViewmodel)
+//                        print(serializedjson)
+                        
+//                        self.performSegueWithIdentifier("goto_Stripe", sender: self)
 //                        let stripeVc = StripeSigninViewController()
 //                        self.presentViewController(stripeVc, animated: true, completion: nil)
                     }
@@ -367,10 +428,125 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
     }
     
     
+    func getCompanyListFromServer(url: String,value:String)
+    {
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://cppstaging.azurewebsites.net/Employee/getCompanyList")!)
+        request.HTTPMethod = "Post"
+        print(value)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+     
+        request.HTTPBody = value.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
+            { data, response, error in
+                guard error == nil && data != nil else {                                                          // check for fundamental networking error
+                    
+                    return
+                }
+                
+                if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(response)")
+                }
+                
+                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("responseString = \(responseString)")
+                
+                let json = JSON(data: data!)
+               for item in json.arrayValue
+               {
+                let compName: String = item["CompanyName"].stringValue
+                let btnTitle : String = (self.categoryNameTextField.text)!
+                print(compName)
+                print(btnTitle)
+                if compName == btnTitle
+                {
+                   self.finalId = item["UserId"].stringValue
+                }
+
+                }
+                
+                
+                    
+                }
+        task.resume()
+        
+    }
+    
+    
+    func getCharityListFromServer(url: String,value:String)
+    {
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        request.HTTPMethod = "Post"
+        print(value)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        request.HTTPBody = value.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
+            { data, response, error in
+                guard error == nil && data != nil else {                                                          // check for fundamental networking error
+                    
+                    return
+                }
+                
+                if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(response)")
+                }
+                
+                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("responseString = \(responseString)")
+                
+                let json = JSON(data: data!)
+                for item in json.arrayValue
+                {
+                    let compName: String = item["CharityName"].stringValue
+                    let btnTitle : String = (self.categoryNameTextField.text)!
+                    print(compName)
+                    print(btnTitle)
+                    if compName == btnTitle
+                    {
+                        self.finalCharityId = item["UserId"].stringValue
+                    }
+                    
+                }
+                
+                
+                
+        }
+        task.resume()
+        
+    }
     
     
     
-    
+//    func getCompanyID()
+//    {
+//    var id=0;
+//    for(CompanyNameModel com:companyNameModelArrayList)
+//    {
+//    if(com.CompanyName.equals(txtcomcharname))
+//    {
+//    id=com.UserId;
+//    }
+//    }
+//    return  id;
+//    }
+//    
+//    func getCharityID()
+//    {
+//    var id=0;
+//    for(stripeconnectcharity com:charityList)
+//    {
+//    if(com.CharityName.equals(txtcomcharname))
+//    {
+//    id=com.UserID;
+//    }
+//    }
+//    return  id;
+//    }
+//    
     
     
    /* func sendrequesttoserver(url : String,value : String)

@@ -11,39 +11,60 @@ import Foundation
 class Signupviewmodel
 {
     var Username : String
+    var Email: String
     var Password : String
-    var ConfirmPassword : String
+//    var ConfirmPassword : String
     var PhoneNumber : String
-    var CPPAccountType : String
-    var IsCompany:Bool
-    var IsEmployee : Bool
-    var IsIndividual : Bool
-    var ISCharity : Bool
-    var IsCharityEmployee: Bool
+//    var CPPAccountType : String
+//    var IsCompany:Bool
+//    var IsEmployee : Bool
+//    var IsIndividual : Bool
+//    var ISCharity : Bool
+//    var IsCharityEmployee: Bool
+//    var stripeCode : String
+    
+//    var CharityCompanyID: String
     var UserDeviceID : String
-    var stripeCode : String
-    //{"Username":"cppdineshindividual","Password":"Cpp@2593","ConfirmPassword":"Cpp@2593","email":"dineshkumar02051993@gmail.com","PhoneNumber":"9551702150","CPPAccountType":"Bank","IsCompany":false,"IsEmployee":false,"IsIndividual":true,"ISCharity":false,"IsCharityEmployee":false,"UserDeviceID":"GCMID for notification","stripeCode":"Code from stripe after stripe signup from webview"}
+    var CompanyID: String
+  
     
-    
-    
-    init?( Username : String, Password : String, ConfirmPassword : String, email : String, PhoneNumber : String, CPPAccountType: String, IsCompany:Bool,IsEmployee : Bool, IsIndividual : Bool, ISCharity : Bool, IsCharityEmployee: Bool, UserDeviceID : String, stripeCode : String)
+    init?( Username : String, Password : String, Email : String, PhoneNumber : String,CompanyID: String,UserDeviceID: String)
     {
-        self.Username = Username
-        self.Password = Password
-        self.ConfirmPassword = ConfirmPassword
-        self.PhoneNumber = PhoneNumber
-        self.CPPAccountType = CPPAccountType
-        self.IsCompany = IsCompany
-        self.IsEmployee = IsEmployee
-        self.IsIndividual = IsIndividual
-        self.ISCharity = ISCharity
-        self.IsCharityEmployee = IsCharityEmployee
-        self.UserDeviceID = UserDeviceID
-        self.stripeCode = stripeCode
-        
+            self.Username = Username
+            self.Password = Password
+            self.Email = Email
+            self.PhoneNumber = PhoneNumber
+            self.CompanyID = CompanyID
+            self.UserDeviceID = UserDeviceID
     }
+//
+//    init?( Username : String, Password : String, ConfirmPassword : String, Email : String, PhoneNumber : String, CPPAccountType: String, IsCompany:Bool,IsEmployee : Bool, IsIndividual : Bool, ISCharity : Bool, IsCharityEmployee: Bool, UserDeviceID : String, stripeCode : String)
+//    {
+//        self.Username = Username
+//        self.Email =email
+//        self.Password = Password
+//        self.ConfirmPassword = ConfirmPassword
+//        self.PhoneNumber = PhoneNumber
+//        self.CPPAccountType = CPPAccountType
+//        self.IsCompany = IsCompany
+//        self.IsEmployee = IsEmployee
+//        self.IsIndividual = IsIndividual
+//        self.ISCharity = ISCharity
+//        self.IsCharityEmployee = IsCharityEmployee
+//        self.UserDeviceID = UserDeviceID
+//        self.stripeCode = stripeCode
+//        
+//    }
     
-    
+//    func initForSignUp( Username : String, Password : String, email : String, PhoneNumber : String )
+//    {
+//        self.Username = Username
+//        self.Password = Password
+//        self.Email = email
+//        self.PhoneNumber = PhoneNumber
+//        
+//        
+//    }
 }
 
 
