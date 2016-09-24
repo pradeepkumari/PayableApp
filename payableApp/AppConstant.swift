@@ -14,10 +14,13 @@ struct Appconstant
     static let SIGN_UP="/StripeConnectSignup"
     static var btnName = "Select Category"
     
-    
-    
     static let getCompanyList = "Employee/getCompanyList"
     static let getCharityNameList =  "Charity/charityNameList"
+    
+    static let employeeSignup="Employee/EmployeeSignup"
+    static let charityemployeeSignup="Charity/CharityEmployeeSignup"
+    static  let API_AuthenticateUser =  "api/Authenticate"
+    static let forgot = "api/Forgot/";
 }
 
 

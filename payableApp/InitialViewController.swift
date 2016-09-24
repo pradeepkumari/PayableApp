@@ -17,7 +17,7 @@ class InitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "SplashScreen.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background-ios.png")!)
         
         logoimg.hidden = true
         a = 1.0

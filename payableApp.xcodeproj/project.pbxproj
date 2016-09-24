@@ -92,6 +92,14 @@
 		18D6F25D1D91970500B9D985 /* SelectAccountAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6F25B1D91970500B9D985 /* SelectAccountAlertViewController.swift */; };
 		18D6F25E1D91970500B9D985 /* SelectAccountAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D6F25C1D91970500B9D985 /* SelectAccountAlertViewController.xib */; };
 		18E8BA791D8C4F0100B5F56A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E8BA781D8C4F0100B5F56A /* SettingsViewController.swift */; };
+		18ECB2781D964936006EE524 /* background-ios.png in Resources */ = {isa = PBXBuildFile; fileRef = 18ECB2771D964936006EE524 /* background-ios.png */; };
+		18ECB27B1D968C31006EE524 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECB27A1D968C31006EE524 /* Security.framework */; };
+		18ECB27D1D968DB5006EE524 /* KeyChainItemWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ECB27C1D968DB5006EE524 /* KeyChainItemWrapper.swift */; };
+		18ECB27F1D969044006EE524 /* MerchantLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ECB27E1D969044006EE524 /* MerchantLoginViewModel.swift */; };
+		18ECB2821D96C1F6006EE524 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECB2811D96C1F6006EE524 /* KeychainWrapper.m */; };
+		18ECB2871D96D76C006EE524 /* ForgotPasswordPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ECB2851D96D76C006EE524 /* ForgotPasswordPopUpViewController.swift */; };
+		18ECB2881D96D76C006EE524 /* ForgotPasswordPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18ECB2861D96D76C006EE524 /* ForgotPasswordPopUpViewController.xib */; };
+		18ECB28A1D96DE43006EE524 /* ForgotPwdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ECB2891D96DE43006EE524 /* ForgotPwdModel.swift */; };
 		18F690D31D8FB09B00DF1AE9 /* StripeDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F690D21D8FB09B00DF1AE9 /* StripeDashboardViewController.swift */; };
 		18F690D51D901AC800DF1AE9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F690D41D901AC800DF1AE9 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
@@ -212,6 +220,15 @@
 		18D6F25B1D91970500B9D985 /* SelectAccountAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAccountAlertViewController.swift; sourceTree = "<group>"; };
 		18D6F25C1D91970500B9D985 /* SelectAccountAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectAccountAlertViewController.xib; sourceTree = "<group>"; };
 		18E8BA781D8C4F0100B5F56A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		18ECB2771D964936006EE524 /* background-ios.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-ios.png"; sourceTree = "<group>"; };
+		18ECB27A1D968C31006EE524 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		18ECB27C1D968DB5006EE524 /* KeyChainItemWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainItemWrapper.swift; sourceTree = "<group>"; };
+		18ECB27E1D969044006EE524 /* MerchantLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantLoginViewModel.swift; sourceTree = "<group>"; };
+		18ECB2801D96C1F6006EE524 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainWrapper.h; path = ../../Downloads/KeychainWrapper/KeychainWrapper.h; sourceTree = "<group>"; };
+		18ECB2811D96C1F6006EE524 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = ../../Downloads/KeychainWrapper/KeychainWrapper.m; sourceTree = "<group>"; };
+		18ECB2851D96D76C006EE524 /* ForgotPasswordPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPopUpViewController.swift; sourceTree = "<group>"; };
+		18ECB2861D96D76C006EE524 /* ForgotPasswordPopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordPopUpViewController.xib; sourceTree = "<group>"; };
+		18ECB2891D96DE43006EE524 /* ForgotPwdModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPwdModel.swift; sourceTree = "<group>"; };
 		18F690D21D8FB09B00DF1AE9 /* StripeDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeDashboardViewController.swift; sourceTree = "<group>"; };
 		18F690D41D901AC800DF1AE9 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18ECB27B1D968C31006EE524 /* Security.framework in Frameworks */,
 				18C536451D89699B00116795 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				18C536181D89662100116795 /* DBHelper.swift */,
+				18ECB2801D96C1F6006EE524 /* KeychainWrapper.h */,
+				18ECB2811D96C1F6006EE524 /* KeychainWrapper.m */,
 				18C536191D89662100116795 /* FMDatabase.h */,
 				18C5361A1D89662100116795 /* FMDatabase.m */,
 				18C5361B1D89662100116795 /* FMDatabaseAdditions.h */,
@@ -307,6 +327,7 @@
 		18C669361D87F296000F8BBA = {
 			isa = PBXGroup;
 			children = (
+				18ECB27A1D968C31006EE524 /* Security.framework */,
 				18C536441D89699B00116795 /* libsqlite3.0.tbd */,
 				18D6F20E1D91597A00B9D985 /* SLPopUp */,
 				18C536161D8965FB00116795 /* Helpers */,
@@ -332,7 +353,9 @@
 			children = (
 				18C536341D8966E200116795 /* Signupviewmodel.swift */,
 				18B5544E1D956E4100F206AC /* Signupviewcharitymodel.swift */,
+				18ECB27E1D969044006EE524 /* MerchantLoginViewModel.swift */,
 				18B5544B1D95168200F206AC /* Idmodel.swift */,
+				18ECB2891D96DE43006EE524 /* ForgotPwdModel.swift */,
 				18B0675C1D92CDF100D6823E /* MerchantBitcoin_UpdateBitcoinStatus.swift */,
 				18B0675E1D92CE7C00D6823E /* MerchantBitcoinTransactionHistoryModel.swift */,
 				18B067601D92CEEC00D6823E /* MerchantBitcoin_CheckBitcoinPaid.swift */,
@@ -340,6 +363,7 @@
 				18B067641D92D0A900D6823E /* MerchantBitcoin_CreateStripeBitcoinRequest.swift */,
 				18B0674E1D9263C000D6823E /* Images */,
 				18C536421D89674400116795 /* Alert.swift */,
+				18ECB27C1D968DB5006EE524 /* KeyChainItemWrapper.swift */,
 				18B067581D92C21A00D6823E /* InitialViewController.swift */,
 				18C536321D8966E200116795 /* EventManager.swift */,
 				18C536331D8966E200116795 /* JsonSerializerSwift.swift */,
@@ -347,6 +371,8 @@
 				18C669421D87F296000F8BBA /* AppDelegate.swift */,
 				18C669441D87F296000F8BBA /* ViewController.swift */,
 				18C669701D87F2CA000F8BBA /* LoginandSignUpPageViewController.swift */,
+				18ECB2851D96D76C006EE524 /* ForgotPasswordPopUpViewController.swift */,
+				18ECB2861D96D76C006EE524 /* ForgotPasswordPopUpViewController.xib */,
 				18C6697A1D8853B7000F8BBA /* SignUpViewController.swift */,
 				18D6F25B1D91970500B9D985 /* SelectAccountAlertViewController.swift */,
 				18B067541D92999200D6823E /* SelectAccountTableViewCell.swift */,
@@ -357,6 +383,7 @@
 				18C669721D87F412000F8BBA /* Screen Shot 2016-09-13 at 2.14.25 PM.png */,
 				18C669761D880155000F8BBA /* icon_username.png */,
 				18C669741D88014C000F8BBA /* icon_password.png */,
+				18ECB2771D964936006EE524 /* background-ios.png */,
 				18C669461D87F296000F8BBA /* Main.storyboard */,
 				18C669491D87F296000F8BBA /* Assets.xcassets */,
 				1805945A1D942FB800AA7197 /* key.png */,
@@ -525,6 +552,7 @@
 				18D6F23B1D91895E00B9D985 /* ic_bitcoin@2x.png in Resources */,
 				18D6F23F1D91895E00B9D985 /* ic_dashboard@2x.png in Resources */,
 				18C6694D1D87F296000F8BBA /* LaunchScreen.storyboard in Resources */,
+				18ECB2781D964936006EE524 /* background-ios.png in Resources */,
 				18B067571D92999200D6823E /* SelectAccountTableViewCell.xib in Resources */,
 				18D6F23E1D91895E00B9D985 /* ic_bottomlogout@2x.png in Resources */,
 				18D6F2391D91895E00B9D985 /* ic_account@2x.png in Resources */,
@@ -556,6 +584,7 @@
 				18C6694A1D87F296000F8BBA /* Assets.xcassets in Resources */,
 				18D6F2501D91895E00B9D985 /* ic_settings@2x.png in Resources */,
 				18C669481D87F296000F8BBA /* Main.storyboard in Resources */,
+				18ECB2881D96D76C006EE524 /* ForgotPasswordPopUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,8 +614,11 @@
 				18B067561D92999200D6823E /* SelectAccountTableViewCell.swift in Sources */,
 				18C536241D89662100116795 /* DBHelper.swift in Sources */,
 				18C536381D8966E200116795 /* Signupviewmodel.swift in Sources */,
+				18ECB28A1D96DE43006EE524 /* ForgotPwdModel.swift in Sources */,
 				18B5544F1D956E4100F206AC /* Signupviewcharitymodel.swift in Sources */,
+				18ECB27F1D969044006EE524 /* MerchantLoginViewModel.swift in Sources */,
 				18E8BA791D8C4F0100B5F56A /* SettingsViewController.swift in Sources */,
+				18ECB27D1D968DB5006EE524 /* KeyChainItemWrapper.swift in Sources */,
 				18B067651D92D0A900D6823E /* MerchantBitcoin_CreateStripeBitcoinRequest.swift in Sources */,
 				18C669431D87F296000F8BBA /* AppDelegate.swift in Sources */,
 				18F690D51D901AC800DF1AE9 /* HistoryViewController.swift in Sources */,
@@ -599,6 +631,7 @@
 				18C536281D89662100116795 /* FMDatabaseQueue.m in Sources */,
 				18C536361D8966E200116795 /* EventManager.swift in Sources */,
 				18C536151D8960A700116795 /* PayableHomePageViewController.swift in Sources */,
+				18ECB2821D96C1F6006EE524 /* KeychainWrapper.m in Sources */,
 				18C6697B1D8853B7000F8BBA /* SignUpViewController.swift in Sources */,
 				18F690D31D8FB09B00DF1AE9 /* StripeDashboardViewController.swift in Sources */,
 				18D6F2131D91709000B9D985 /* MyPopupViewController.swift in Sources */,
@@ -610,6 +643,7 @@
 				18C536291D89662100116795 /* FMResultSet.m in Sources */,
 				18C669711D87F2CA000F8BBA /* LoginandSignUpPageViewController.swift in Sources */,
 				18C536261D89662100116795 /* FMDatabaseAdditions.m in Sources */,
+				18ECB2871D96D76C006EE524 /* ForgotPasswordPopUpViewController.swift in Sources */,
 				18AB49151D8ABEC100B273C9 /* AccountInfoViewController.swift in Sources */,
 				18D6F2101D91598E00B9D985 /* UIVViewController-SLPopup.swift in Sources */,
 				18B5544C1D95168200F206AC /* Idmodel.swift in Sources */,

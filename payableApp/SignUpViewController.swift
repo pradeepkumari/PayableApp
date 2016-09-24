@@ -41,6 +41,9 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
     var companyId: String!
     var companyCharityId: String!
     
+    
+    var isAlert:Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,6 +92,7 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
     
     func alertFunction(accountType: NSArray){
         let alertView: UIAlertView = UIAlertView()
+        self.isAlert = true
         alertView.delegate = self
 //        alertView.title = "Wish List"
         for(var i = 0; i<accountType.count ; i++){
@@ -100,50 +104,37 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
         alertView.show()
     }
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
-        if buttonIndex == 0
+       
+        if(isAlert)
         {
+        
+            if buttonIndex == 0
+            {
            selectAccountTypeButton.setTitle("   Stripe Sign in", forState:.Normal)
             bottomView.frame.origin.y = selectAccountTypeButton.frame.origin.y + selectAccountTypeButton.frame.size.height+110
             sumUpCheck = false
             
-        }
-        else if buttonIndex == 1
-        {
+            }
+            else if buttonIndex == 1
+            {
             selectAccountTypeButton.setTitle("   SumUp Sign in", forState:.Normal)
             bottomView.frame.origin.y = selectAccountTypeButton.frame.origin.y + selectAccountTypeButton.frame.size.height+11
             sumUpCheck = true
-        }
-        else
-        {
+            }
+            else
+            {
            selectAccountTypeButton.setTitle("   Select Account Type", forState:.Normal)
              bottomView.frame.origin.y = selectAccountTypeButton.frame.origin.y + selectAccountTypeButton.frame.size.height+11
             sumUpCheck = true
+            }
+        }
+        else
+        {
+            self.performSegueWithIdentifier("goto_Login", sender: self)
+
         }
     }
     
-    
-    
-    
-    func addCategory() {
-        
-//        let popoverContent = (self.storyboard?.instantiateViewControllerWithIdentifier("popOver"))! as! PopOverViewController
-////        let nav = UINavigationController(rootViewController: popoverContent)
-//        popoverContent.modalPresentationStyle = .Popover
-//        let popover = popoverContent.popoverPresentationController
-//        popoverContent.preferredContentSize = CGSizeMake(100,150)
-//        popover!.delegate = self
-//        popover!.sourceView = self.view
-//        popover!.sourceRect = CGRectMake(100,100,0,0)
-        
-//        self.view.addSubview(popoverContent.view)
-//        popoverContent.didMoveToParentViewController(self)
-//        self.presentViewController(popoverContent, animated: true, completion: nil)
-        
-      
-        
-        
-        
-    }
     
     func displayViewController(animationType: SLpopupViewAnimationType) {
         let myPopupViewController:SelectAccountAlertViewController = SelectAccountAlertViewController(nibName:"SelectAccountAlertViewController", bundle: nil)
@@ -159,7 +150,7 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
     @IBAction func categoryTypeButtonAction(sender: AnyObject)
     {
         
-        self.displayViewController(.BottomTop)
+//        self.displayViewController(.BottomTop)
          print(Appconstant.btnName)
         
        
@@ -214,8 +205,17 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
             self.bottomView.frame.origin.y = self.selectAccountTypeButton.frame.origin.y + self.selectAccountTypeButton.frame.size.height+110
         }
         // Add Actions
-        let image = UIImage(named: "icon_password.png")
+        let image = UIImage(named: "ic_np_individual@2x.png.png")
         action.setValue(image, forKey: "image")
+        let image1 = UIImage(named: "ic_np_company@2x.png.png")
+        action1.setValue(image1, forKey: "image")
+        let image2 = UIImage(named: "ic_np_employee@2x.png")
+        action2.setValue(image2, forKey: "image")
+        let image3 = UIImage(named: "ic_np_organization@2x.png")
+        action3.setValue(image3, forKey: "image")
+        let image4 = UIImage(named: "ic_np_organization_employee@2x.png")
+        action4.setValue(image4, forKey: "image")
+        
         
         alertController.addAction(actionTitle)
         alertController.addAction(action)
@@ -293,6 +293,10 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                             }
                             else if (categoryTypeBtn.titleLabel?.text)!  == "Employee"
                             {
+                                
+                                
+                                
+                                //Fetch Company ID
                                 let idmodel = Idmodel.init(ID:self.ID)!
                                 let serializedjson  = JSONSerializer.toJson(idmodel)
                                 print(serializedjson)
@@ -323,26 +327,35 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                                         for item in json.arrayValue
                                         {
                                             let compName = item["CompanyName"].stringValue
-                                            let btnTitle = (self.categoryNameTextField.text)!
+                                            let btnTitle = "Vertace iOS company"
                                             print(compName)
                                             print(btnTitle)
-                                            if compName.isEqual(btnTitle)
+                                            
+                                            let data = compName.dataUsingEncoding(NSUTF8StringEncoding)
+                                            let data1 = btnTitle.dataUsingEncoding(NSUTF8StringEncoding)
+                                            
+                                            if data!.isEqualToData(data1!)
                                             {
-                                               print("not equal")
+                                                print("equals")
                                             }
+                                            
+//                                            let isEqual = (compName == btnTitle)
+//                                            if isEqual
+//                                            {
+//                                                print("equals")
+//                                            }
+//                                            if compName.isEqual(btnTitle)
+//                                            {
+//                                               print("not equal")
+//                                            }
                                             else
                                             {
-                                                self.finalId = item["UserId"].stringValue
+                                                self.finalId = "8282"
+//                                                self.finalId = item["UserId"].stringValue
                                             }
                                             
                                         }
                                         
-                                        
-                                        
-                                
-                                
-                                
-                                
                                 self.isCompany=false;
                                 self.isIndividual=false;
                                 self.isEmployee=true;
@@ -351,9 +364,12 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                                 
                                 
                                 self.companyId = self.finalId
-                                let signupViewmodel = Signupviewmodel.init( Username : self.userNameTextField.text!, Password : self.passwordTextField.text!, Email : self.emailTextField.text!, PhoneNumber :  self.phoneTextField.text!,CompanyID:self.finalId,UserDeviceID: "")
+                                let signupViewmodel = Signupviewmodel.init( Username : self.userNameTextField.text!, Password : self.passwordTextField.text!, Email : self.emailTextField.text!, PhoneNumber :  self.phoneTextField.text!,CompanyID:self.finalId,UserDeviceID: "")!
                                 let serializedjson1 = JSONSerializer.toJson(signupViewmodel)
                                 print(serializedjson1)
+                                        
+                                 self.employeeSignUp(Appconstant.WEB_API+Appconstant.employeeSignup, value: serializedjson1)
+                                       
                                 }
                                 task.resume()
                                 
@@ -366,66 +382,183 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                                 isNonprofit=true;
                                 isNonprofitEmployee=false;
                                 
-                                
-                                
                             }
                             else if (categoryTypeBtn.titleLabel?.text)! == "Non-Profit Organisation Employee"
                             {
-                                isCompany=false;
-                                isIndividual=false;
-                                isEmployee=false;
-                                isNonprofit=false;
-                                isNonprofitEmployee=true;
+                                
                                 
                                 let idmodel = Idmodel.init(ID:self.ID)
                                 let serializedjson  = JSONSerializer.toJson(idmodel)
                                 print(serializedjson)
-                                self.getCharityListFromServer(Appconstant.WEB_API+Appconstant.getCharityNameList, value: serializedjson)
-                                companyCharityId = self.finalCharityId
+//                                self.getCharityListFromServer(Appconstant.WEB_API+Appconstant.getCharityNameList, value: serializedjson)
+//                                companyCharityId = self.finalCharityId
                                 
-                               
-                                let signupviewcharitymodel = Signupviewcharitymodel.init( Username : self.userNameTextField.text!, Password : self.passwordTextField.text!, Email : self.emailTextField.text!, PhoneNumber :  self.phoneTextField.text!,CharityCompanyID:companyCharityId,UserDeviceID: "")
-                                let serializedjson2 = JSONSerializer.toJson(signupviewcharitymodel)
-                                print(serializedjson2)
+                                
+                                let request = NSMutableURLRequest(URL: NSURL(string: Appconstant.WEB_API+Appconstant.getCharityNameList)!)
+                                request.HTTPMethod = "Post"
+                                print(serializedjson)
+                                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                                
+                                request.HTTPBody = serializedjson.dataUsingEncoding(NSUTF8StringEncoding)
+                                
+                                let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
+                                    { data, response, error in
+                                        guard error == nil && data != nil else {                                                          // check for fundamental networking error
+                                            
+                                            return
+                                        }
+                                        
+                                        if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                                            print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                                            print("response = \(response)")
+                                        }
+                                        
+                                        let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                                        print("responseString = \(responseString)")
+                                        
+                                        let json = JSON(data: data!)
+                                        for item in json.arrayValue
+                                        {
+                                            let compName: String = item["CharityName"].stringValue
+                                            let btnTitle : String = (self.categoryNameTextField.text)!
+                                            print(compName)
+                                            print(btnTitle)
+                                            if compName == btnTitle
+                                            {
+                                                self.finalCharityId = "10009"
+                                                self.finalCharityId = item["UserId"].stringValue
+                                            }
+                                            
+                                        }
+                                        
+                                        self.isCompany=false;
+                                        self.isIndividual=false;
+                                        self.isEmployee=false;
+                                        self.isNonprofit=false;
+                                        self.isNonprofitEmployee=true;
+                                        
+                                        
+                                        let signupviewcharitymodel = Signupviewcharitymodel.init( Username : self.userNameTextField.text!, Password : self.passwordTextField.text!, Email : self.emailTextField.text!, PhoneNumber :  self.phoneTextField.text!,CharityCompanyID:self.companyCharityId,UserDeviceID: "")
+                                        let serializedjson2 = JSONSerializer.toJson(signupviewcharitymodel)
+                                        print(serializedjson2)
+                                        self.charitySignUp(Appconstant.WEB_API+Appconstant.charityemployeeSignup, value: serializedjson2)
+                                        
+                                        
+                                }
+                                task.resume()
+                                
                             }
-
                             
-                            
-                            
-                            
-                            
-//                            let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Stripe",IsCompany: false,IsEmployee : false, IsIndividual : true, ISCharity : false, IsCharityEmployee: false, UserDeviceID : "", stripeCode : "")!
-//                            let serializedjson  = JSONSerializer.toJson(signupViewmodel)
-//                            print(serializedjson)
-                            
-                            self.performSegueWithIdentifier("goto_Stripe", sender: self)
-
-                            
+//                            self.performSegueWithIdentifier("goto_Stripe", sender: self)
                         }
                         
                     }
                     else
                     {
                         self.performSegueWithIdentifier("goto_Stripe", sender: self)
-
-                        
-//                        let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Bank",IsCompany: isCompany,IsEmployee : isEmployee, IsIndividual : isIndividual, ISCharity : isNonprofit, IsCharityEmployee: isNonprofitEmployee, UserDeviceID : "", stripeCode : "")!
-                        
-//                        let signupViewmodel = Signupviewmodel.init(Username: self.userNameTextField.text!, Password: self.passwordTextField.text!, ConfirmPassword: self.confirmPwdTextField.text!, email: self.emailTextField.text! , PhoneNumber: self.phoneTextField.text!,CPPAccountType: "Bank",IsCompany: isCompany,IsEmployee : isEmployee, IsIndividual : isIndividual, ISCharity : isNonprofit, IsCharityEmployee: isNonprofitEmployee, UserDeviceID : "", stripeCode : "")!
-//                        let serializedjson  = JSONSerializer.toJson(signupViewmodel)
-//                        print(serializedjson)
-                        
-//                        self.performSegueWithIdentifier("goto_Stripe", sender: self)
-//                        let stripeVc = StripeSigninViewController()
-//                        self.presentViewController(stripeVc, animated: true, completion: nil)
                     }
                 }
                 
-                
-                //                sendrequesttoserver(Appconstant.WEB_API+Appconstant.SIGNUP_URL, value: serializedjson)
             }
         
     }
+    
+    func employeeSignUp(url: String,value:String)
+    {
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        request.HTTPMethod = "Post"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        request.HTTPBody = value.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
+            { data, response, error in
+                guard error == nil && data != nil else {                                                          // check for fundamental networking error
+                    
+                    return
+                }
+                
+                if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(response)")
+                }
+                
+                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("responseString = \(responseString)")
+                dispatch_async(dispatch_get_main_queue(), {
+                    if responseString! == "-2"
+                    {
+                        self.isAlert=false
+                        let alert:UIAlertView = UIAlertView()
+                        alert.delegate = self
+                        alert.title = "Alert"
+                        alert.message = "SignUp Sucess"
+                        alert.addButtonWithTitle("Understod")
+                        alert.show()
+                        //
+                    }
+
+                })
+                
+//
+    }
+        task.resume()
+    }
+    
+    func charitySignUp(url: String,value:String)
+    {
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        request.HTTPMethod = "Post"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        request.HTTPBody = value.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
+            { data, response, error in
+                guard error == nil && data != nil else {                                                          // check for fundamental networking error
+                    
+                    return
+                }
+                
+                if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(response)")
+                }
+                
+                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("responseString = \(responseString)")
+                dispatch_async(dispatch_get_main_queue(), {
+                    if responseString! == "-2"
+                    {
+                        self.isAlert=false
+                        let alert:UIAlertView = UIAlertView()
+                        alert.delegate = self
+                        alert.title = "Alert"
+                        alert.message = "SignUp Sucess"
+                        alert.addButtonWithTitle("Understod")
+                        alert.show()
+                        //
+                    }
+                    
+                })
+                
+                //
+        }
+        task.resume()
+    }
+
+    
+    
+    
+    
     
     
     func getCompanyListFromServer(url: String,value:String)
@@ -459,7 +592,8 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                 let btnTitle : String = (self.categoryNameTextField.text)!
                 print(compName)
                 print(btnTitle)
-                if compName == btnTitle
+                let isEqual = (compName == compName)
+                if isEqual
                 {
                    self.finalId = item["UserId"].stringValue
                 }
