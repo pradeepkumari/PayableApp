@@ -14,6 +14,10 @@ protocol MyPopupViewControllerDelegate {
 }
 class MyPopupViewController: UIViewController {
     var delegate:MyPopupViewControllerDelegate?
+    var amountString: String!
+    var descriptionString: String!
+    var isSimple: Bool!
+    
     @IBAction func btnOK(sender:UIButton) {
 //        self.delegate?.pressOK(self)
         self.dismissPopupViewController(.TopBottom)
@@ -24,8 +28,36 @@ class MyPopupViewController: UIViewController {
     }
     @IBAction func bitCoinBtn(sender: AnyObject) {
         print("BitCoin Tapped")
+        self.dismissPopupViewController(.TopBottom)
+//        let popup : MerchantQRCodeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("bitcoin") as! MerchantQRCodeViewController
+//        let navigationController = UINavigationController(rootViewController: popup)
+//        navigationController.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+//        self.presentViewController(navigationController, animated: true, completion: nil)
+        
+        let merchantVc: MerchantQRCodeViewController = MerchantQRCodeViewController()
+        self.presentViewController(merchantVc, animated: true, completion: nil)
+        
+//        presentView(merchantVc)
+//        self.displayViewController(.TopBottom)
+//        let merchantVc: MerchantQRCodeViewController = MerchantQRCodeViewController()
+//        self.presentViewController(merchantVc, animated: true, completion: nil)
+//        merchantVc.amountString = self.amountString
+//        merchantVc.descriptionString = self.descriptionString
+//        merchantVc.isSimple = self.isSimple
+//        
+//        print(merchantVc.amountString)
     }
  
+    
+    func displayViewController(animationType: SLpopupViewAnimationType) {
+        let merchantVc: MerchantQRCodeViewController = MerchantQRCodeViewController()
+//        let myPopupViewController:MyPopupViewController = MyPopupViewController(nibName:"MyPopupViewController", bundle: nil)
+        //        myPopupViewController.delegate = self
+        self.presentpopupViewController(merchantVc, animationType: animationType, completion: { () -> Void in
+            
+        })
+    }
+    
     @IBAction func generateQR(sender: AnyObject) {
         print("generateQR Tapped")
     }
@@ -38,6 +70,9 @@ class MyPopupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         
         self.view.frame.size.width = 300
         self.view.frame.size.width = 300

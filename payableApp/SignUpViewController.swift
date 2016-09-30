@@ -27,6 +27,17 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
     var screenWidth:CGFloat!
     var screenHeight:CGFloat!
     
+    var CPPAccountType = "Bank"
+    
+    var username: String = ""
+    var Password: String = ""
+    var ConfirmPassword: String = ""
+    var email: String = ""
+    var PhoneNumber: String = ""
+    var UserDeviceID: String = "1"
+    
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var isCompany=false
     var isIndividual=false
@@ -40,6 +51,8 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
     var finalCharityId: String!
     var companyId: String!
     var companyCharityId: String!
+    
+    
     
     
     var isAlert:Bool = true
@@ -150,17 +163,8 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
     @IBAction func categoryTypeButtonAction(sender: AnyObject)
     {
         
-//        self.displayViewController(.BottomTop)
+
          print(Appconstant.btnName)
-        
-       
-//        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewControllerWithIdentifier("popOver") 
-//        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
-//        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
-////        popover.barButtonItem = sender as! UIBarButtonItem
-//        presentViewController(vc, animated: true, completion:nil)
-        
         
         let alertController = UIAlertController()
         let actionTitle = UIAlertAction(title:"Select Account Type", style: .Default) { (action) -> Void in
@@ -256,6 +260,7 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                 
                 if (sumUpCheck == true)
                 {
+                    //ENTERING SUMUP SIGNIN
               
                     self.performSegueWithIdentifier("goto_Homepage", sender: self)
                     let homeVc:PayableHomePageViewController = PayableHomePageViewController ()
@@ -265,12 +270,18 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                 
                 else
                 {
+                    
+                    //ENTERING STRIPE SIGNIN
+                    
+                    
                     if categoryTypeBtn.titleLabel?.text == "Select Account Type"
                     {
                         self.presentViewController(Alert().alert("Warning", message: "Choose your Category Type"),animated: true,completion: nil)
                     }
                     else if categoryTypeBtn.titleLabel?.text != "Individual"
                     {
+                        //ENTERING IF WE SELECT COMPANY, EMPLOYEE, NON-PROFIT,NON-PROFIT EMPLOYEE
+                        
                         if (self.categoryNameTextField.text == "")
                             
                         {
@@ -278,6 +289,8 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                         }
                         else
                         {
+                            //ENTERING IF WE HAVE Category name
+                            
                             print((categoryTypeBtn.titleLabel?.text)!)
                             
                             if (categoryTypeBtn.titleLabel?.text)!  == "Company"
@@ -288,14 +301,19 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                                 isNonprofit=false;
                                 isNonprofitEmployee=false;
                                 
+                                let iCCSignupModel = ICCSignupModel.init(Username : self.userNameTextField.text!, Password : self.passwordTextField.text!, ConfirmPassword : self.confirmPwdTextField.text!, email : self.emailTextField.text!, PhoneNumber : self.phoneTextField.text!, CPPAccountType: "Bank", IsCompany:isCompany,IsEmployee : isEmployee, IsIndividual : isIndividual, ISCharity : isNonprofit, IsCharityEmployee: isNonprofitEmployee, UserDeviceID : UserDeviceID)!
+                                let serializedjson  = JSONSerializer.toJson(iCCSignupModel)
+                                print(serializedjson)
                                 
+                                // save to nsuserDefault
+                                let UserDefaults = NSUserDefaults.standardUserDefaults()
+                                UserDefaults.setObject(serializedjson, forKey: "json")
+                                
+                                self.performSegueWithIdentifier("goto_Stripe", sender: self)
                                 
                             }
                             else if (categoryTypeBtn.titleLabel?.text)!  == "Employee"
                             {
-                                
-                                
-                                
                                 //Fetch Company ID
                                 let idmodel = Idmodel.init(ID:self.ID)!
                                 let serializedjson  = JSONSerializer.toJson(idmodel)
@@ -382,6 +400,18 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                                 isNonprofit=true;
                                 isNonprofitEmployee=false;
                                 
+                                
+                                let iCCSignupModel = ICCSignupModel.init(Username : self.userNameTextField.text!, Password : self.passwordTextField.text!, ConfirmPassword : self.confirmPwdTextField.text!, email : self.emailTextField.text!, PhoneNumber : self.phoneTextField.text!, CPPAccountType: "Bank", IsCompany:isCompany,IsEmployee : isEmployee, IsIndividual : isIndividual, ISCharity : isNonprofit, IsCharityEmployee: isNonprofitEmployee, UserDeviceID : UserDeviceID)!
+                                let serializedjson  = JSONSerializer.toJson(iCCSignupModel)
+                                print(serializedjson)
+                                
+                                // save to nsuserDefault
+                                let UserDefaults = NSUserDefaults.standardUserDefaults()
+                                UserDefaults.setObject(serializedjson, forKey: "json")
+                                self.performSegueWithIdentifier("goto_Stripe", sender: self)
+                                
+                                
+                                
                             }
                             else if (categoryTypeBtn.titleLabel?.text)! == "Non-Profit Organisation Employee"
                             {
@@ -455,7 +485,17 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                     }
                     else
                     {
+                        
+                        //IF INDIVIDUAL IS CHOOSED
+                        let iCCSignupModel = ICCSignupModel.init(Username : self.userNameTextField.text!, Password : self.passwordTextField.text!, ConfirmPassword : self.confirmPwdTextField.text!, email : self.emailTextField.text!, PhoneNumber : self.phoneTextField.text!, CPPAccountType: "Bank", IsCompany:isCompany,IsEmployee : isEmployee, IsIndividual : isIndividual, ISCharity : isNonprofit, IsCharityEmployee: isNonprofitEmployee, UserDeviceID : UserDeviceID)!
+                        let serializedjson  = JSONSerializer.toJson(iCCSignupModel)
+                        print(serializedjson)
+                        
+                        // save to nsuserDefault
+                        let UserDefaults = NSUserDefaults.standardUserDefaults()
+                        UserDefaults.setObject(serializedjson, forKey: "json")
                         self.performSegueWithIdentifier("goto_Stripe", sender: self)
+                        
                     }
                 }
                 
@@ -473,7 +513,7 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
         
         request.HTTPBody = value.dataUsingEncoding(NSUTF8StringEncoding)
         
-        
+//        self.activityIndicator.startAnimating()
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
             { data, response, error in
@@ -497,13 +537,23 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                         alert.delegate = self
                         alert.title = "Alert"
                         alert.message = "SignUp Sucess"
-                        alert.addButtonWithTitle("Understod")
+                        alert.addButtonWithTitle("not Sucess")
                         alert.show()
                         //
                     }
-
+                    else
+                    {
+                        self.isAlert=false
+                        let alert:UIAlertView = UIAlertView()
+                        alert.delegate = self
+                        alert.title = "Alert"
+                        alert.message = "SignUp Sucess"
+                        alert.addButtonWithTitle("Sucess")
+                        alert.show()
+                    }
+                    
                 })
-                
+//             self.activityIndicator.stopAnimating()
 //
     }
         task.resume()
@@ -519,7 +569,7 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
         
         request.HTTPBody = value.dataUsingEncoding(NSUTF8StringEncoding)
         
-        
+//        self.activityIndicator.startAnimating()
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
             { data, response, error in
@@ -543,13 +593,18 @@ class SignUpViewController: UIViewController, UIAlertViewDelegate {
                         alert.delegate = self
                         alert.title = "Alert"
                         alert.message = "SignUp Sucess"
-                        alert.addButtonWithTitle("Understod")
+                        alert.addButtonWithTitle("Sucess")
                         alert.show()
                         //
+                    }
+                    else
+                    {
+                        
                     }
                     
                 })
                 
+//                self.activityIndicator.stopAnimating()
                 //
         }
         task.resume()

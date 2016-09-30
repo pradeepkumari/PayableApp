@@ -21,8 +21,28 @@ class PayableHomePageViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var chargeAmountTextField: UITextField!
     var str = [String]()
     var userIsInTheMiddleOfTypingANumber = false
+    
+    
+    var username1 = ""
+    var password1 = ""
+    var userid = ""
+    
+    var updatedText = ""
+    var chargeValue: String = ""
+    var chargeText : Double = 0.00
+    var chargeAmountString : String = ""
+   
+    let view1 = UIView()
+    let fadeButton = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        chargeAmountTextField.text = "$0.00"
+        descriptionTextView.delegate = self
+        
+        descriptionTextView.text = "Enter your Comment"
+        descriptionTextView.textColor = UIColor.lightGrayColor()
+//        self.getuserdetails()
         
        
 //        let scrollView = UIScrollView(frame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height))
@@ -49,13 +69,50 @@ class PayableHomePageViewController: UIViewController,UITextViewDelegate {
 ////
         
     }
-    func textViewDidChange(descriptionField: UITextView) {
-        if descriptionField.text.isEmpty == false {
-            descriptionTextView.text = ""
+//    func textViewDidChange(descriptionField: UITextView) {
+//        if descriptionField.text.isEmpty == false {
+//            descriptionTextView.text = ""
+//        } else {
+//            descriptionTextView.text = "Description"
+//        }
+//    }
+    
+    
+    func getuserdetails(){
+        DBHelper().opensupermarketDB()
+        let databaseURL = NSURL(fileURLWithPath:NSTemporaryDirectory()).URLByAppendingPathComponent("PayableApp.db")
+        let databasePath = databaseURL.absoluteString
+        let supermarketDB = FMDatabase(path: databasePath as String)
+        if supermarketDB.open() {
+            
+            let selectSQL = "SELECT * FROM LOGINTABLE"
+            
+            let results:FMResultSet! = supermarketDB.executeQuery(selectSQL,
+                withArgumentsInArray: nil)
+            if ((results == nil))
+            {
+                
+            }
+            else{
+                print("Error: \(supermarketDB.lastErrorMessage())")
+                self.userid = "\(results.intForColumn("USERID"))"
+                self.username1 = results.stringForColumn("USERNAME")
+                self.password1 = results.stringForColumn("PASSWORD")
+                print(username1)
+                print(password1)
+                print(userid)
+                print(results.stringForColumn("USERNAME"))
+                print(results.stringForColumn("PASSWORD"))
+                print( (results.intForColumn("USERID")))
+            }
+            supermarketDB.close()
         } else {
-            descriptionTextView.text = "Description"
+            
         }
+        
     }
+    
+    
     override func viewWillAppear(animated: Bool) {
         
         self.createBottomLineTextField(chargeAmountTextField)
@@ -205,7 +262,7 @@ class PayableHomePageViewController: UIViewController,UITextViewDelegate {
     }
     func logoutAction(sender: UIButton!)
     {
-        
+      self.performSegueWithIdentifier("goto_Login", sender: self)
     }
     
     
@@ -309,17 +366,32 @@ class PayableHomePageViewController: UIViewController,UITextViewDelegate {
         print("Button tapped")
 
         let digit = sender.currentTitle!
+        chargeValue = chargeValue + digit
+        print(chargeValue)
         
-        if userIsInTheMiddleOfTypingANumber {
-            chargeAmountTextField.text = chargeAmountTextField.text! + digit
-        } else {
-            chargeAmountTextField.text = digit
-            userIsInTheMiddleOfTypingANumber = true
-        }
+        
+            let chargeAmt:String = chargeValue
+                        let chargeAmount: Double? = (Double)(chargeAmt)
+            print(chargeAmount!/100.0)
+            chargeText = chargeAmount!/100.0
+             let dollar: String = "$ "
+            chargeAmountTextField.text = dollar + (String)(chargeText)
+        
+       chargeAmountString = (String)(chargeText)
+            //(chargeAmountTextField.text! + digit)
+       
         
     }
     func clearAction(sender: UIButton!) {
-        chargeAmountTextField.text = ""
+
+//      if chargeAmountTextField.text?.characters.count > 0
+//      {
+//        chargeAmountString = chargeAmountString.substringWithRange(Range(start: chargeAmountString.startIndex.advancedBy(0), end: chargeAmountString.endIndex.advancedBy(-1)))
+//        }
+       
+        chargeAmountTextField.text =  (String)(chargeText)
+   
+        chargeValue = ""
     }
     
     
@@ -350,6 +422,56 @@ class PayableHomePageViewController: UIViewController,UITextViewDelegate {
     }
     
     
+    
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == UIColor.lightGrayColor() {
+            textView.text = nil
+            textView.textColor = UIColor.blackColor()
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Enter your Comment"
+            textView.textColor = UIColor.lightGrayColor()
+        }
+    }
+    
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        
+        // Combine the textView text and the replacement text to
+        // create the updated text string
+        let currentText:NSString = textView.text
+        updatedText = currentText.stringByReplacingCharactersInRange(range, withString:text)
+        
+        // If updated text view will be empty, add the placeholder
+        // and set the cursor to the beginning of the text view
+        if updatedText.isEmpty {
+            
+            textView.text = "Enter your Comment"
+            textView.textColor = UIColor.lightGrayColor()
+            
+            textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
+            
+            return false
+        }
+            
+            // Else if the text view's placeholder is showing and the
+            // length of the replacement string is greater than 0, clear
+            // the text view and set its color to black to prepare for
+            // the user's entry
+        else if textView.textColor == UIColor.lightGrayColor() && !text.isEmpty {
+            textView.text = nil
+            textView.textColor = UIColor.blackColor()
+        }
+        
+        return true
+    }
+    
+    
+    
     @IBAction func chargeOptionBtnAction(sender: AnyObject) {
         
 //        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("popOver")
@@ -358,12 +480,94 @@ class PayableHomePageViewController: UIViewController,UITextViewDelegate {
 //        popOverVC.modalPresentationStyle = .Popover
 //        self.view.addSubview(popOverVC.view)
 //        popOverVC.didMoveToParentViewController(self)
-        
+        print(chargeText)
+//        let totalAmountValue: Double = (Double)(chargeAmountTextField.text!)!
+        if ( chargeText < 2)
+        {
+            self.presentViewController(Alert().alert("Warning", message: "Amount Should be above "),animated: true,completion: nil)
+           
+        }
+        else if descriptionTextView.text.isEmpty || descriptionTextView.text == "Description" || descriptionTextView.text == ""
+        {
+            self.presentViewController(Alert().alert("Warning", message: "Please Provide Description for this purchase"),animated: true,completion: nil)
+        }
+        else
+        {
             
-            self.displayViewController(.BottomTop)
+            MerchantDetailsSingleTon.sharedInstance.setChargeAmount(chargeAmountString)
+            MerchantDetailsSingleTon.sharedInstance.setDescriptonText(descriptionTextView.text)
+            MerchantDetailsSingleTon.sharedInstance.setIsSimple(true)
+//            self.displayViewController(.BottomTop)
+            
+            
+            
+//            let popupVc : MyPopupViewController = MyPopupViewController()
+//            print("*****")
+//            print(chargeAmountString)
+//            popupVc.amountString = chargeAmountString
+//            popupVc.descriptionString = descriptionTextView.text
+//            popupVc.isSimple = true
+//            print(popupVc.amountString)
+            
+            
+            self.createBigButton()
+            
+        }
         
         
     }
+    
+    
+    func createBigButton()
+    {
+        view1.frame =  CGRectMake(10,self.view.frame.origin.y+100,300,300)
+//        view1.frame =  CGRectMake(self.view.frame.origin.x+20,self.view.frame.origin.y+100,self.view.frame.size.width-40,self.view.frame.size.height-200)
+        view1.backgroundColor = UIColor.whiteColor()
+        self.disableTouchesOnView(self.view)
+        self.view.addSubview(view1)
+        
+        let scanCardButton : UIButton = UIButton(frame: CGRectMake(10,10,view1.frame.size.width/2-30,view1.frame.size.height/2-30))
+        scanCardButton.backgroundColor = UIColor.blueColor()
+        scanCardButton.addTarget(self, action: "scanAction:", forControlEvents: .TouchUpInside)
+        [view1.addSubview(scanCardButton)]
+
+        
+    }
+    
+    func scanAction(sender: UIButton!) {
+        print(" Scan Button tapped")
+        
+//        self.performSegueWithIdentifier("goto_MerchantQR", sender: self)
+        let merchantVc: MerchantQRCodeViewController = MerchantQRCodeViewController()
+        self.navigationController?.pushViewController(merchantVc, animated: true)
+    }
+    
+    func fadeAction(sender: UIButton!) {
+        print(" Fade Button tapped")
+        
+        view1.removeFromSuperview()
+        fadeButton.removeFromSuperview()
+        
+    }
+    
+    func disableTouchesOnView(view : UIView)
+    {
+        fadeButton.frame = CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height)
+//        let scanCardButton : UIButton = UIButton(frame: CGRectMake(view.frame.origin.x+20,view.frame.origin.y+20,view.frame.size.width/2-20,view.frame.size.height/2-20))
+        fadeButton.backgroundColor = UIColor.clearColor()
+        fadeButton.tag = 42
+        fadeButton.addTarget(self, action: "fadeAction:", forControlEvents: .TouchUpInside)
+        self.view.addSubview(fadeButton)
+//        scanCardButton.addTarget(self, action: "scanAction:", forControlEvents: .TouchUpInside)
+//        [view.addSubview(scanCardButton)]
+    }
+    
+    func enableTouchesOnView(view : UIView)
+    {
+        view.viewWithTag(42)?.removeFromSuperview()
+    }
+    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -17,6 +17,10 @@ class InitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let date = NSDate()
+        print(date)
+        print(Appconstant.CurrentDevice)
+        print(Appconstant.CountryCode)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background-ios.png")!)
         
         logoimg.hidden = true
@@ -27,6 +31,7 @@ class InitialViewController: UIViewController {
         self.timer = NSTimer.scheduledTimerWithTimeInterval(
             0.01, target: self, selector: Selector("addLogo"), userInfo: nil, repeats: true
         )
+        
       
     }
 
@@ -39,11 +44,16 @@ class InitialViewController: UIViewController {
         a += 0.5
         
         if(a == 40.0){
+           
+            self.view.addSubview(img)
             timer.invalidate()
             self.performSegueWithIdentifier("login", sender: self)
         }
-        self.view.addSubview(img)
+        
     }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

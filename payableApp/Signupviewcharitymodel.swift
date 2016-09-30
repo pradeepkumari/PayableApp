@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Signupviewcharitymodel: NSObject {
+class Signupviewcharitymodel {
     var Username : String
     var Email: String
     var Password : String

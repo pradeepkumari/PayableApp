@@ -139,6 +139,9 @@ extension UIViewController {
     }
     func slideViewOut(popupView: UIView, sourceView:UIView, overlayView:UIView, animationType: SLpopupViewAnimationType) {
         let sourceSize: CGSize = sourceView.bounds.size
+        print(sourceView.frame.size.height)
+        print(popupView.frame.size.height)
+        print(overlayView.frame.size.height)
         let popupSize: CGSize = popupView.bounds.size
         var popupEndRect:CGRect
         switch animationType {
@@ -202,7 +205,8 @@ extension UIViewController {
         }
         
     }
-    func btnDismissViewControllerWithAnimation(btnDismiss : UIButton) {
+    func btnDismissViewControllerWithAnimation(btnDismiss : UIButton)
+    {
         let animationType:SLpopupViewAnimationType = SLpopupViewAnimationType(rawValue: btnDismiss.tag)!
         switch animationType {
         case .BottomTop, .BottomBottom, .TopTop, .TopBottom, .LeftLeft, .LeftRight, .RightLeft, .RightRight:
@@ -231,4 +235,11 @@ extension UIViewController {
             
         }
     }
+    
+    func presentView(object : UIViewController )
+    {
+        self.presentViewController(object, animated: true, completion: nil)
+    }
+    
+    
 }
